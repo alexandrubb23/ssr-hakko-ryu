@@ -1,0 +1,26 @@
+a,
+a:hover {
+  text-decoration: none;
+  color: white;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#root {
+  padding: min(1em, 8%);
+}
+
+#main {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.logo-box {
+  text-align: center;
+}
