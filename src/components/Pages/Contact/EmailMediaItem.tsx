@@ -4,9 +4,11 @@ import EmailIcon from '@mui/icons-material/Email';
 const EmailMediaItem = () => {
   return (
     <MediaItem
-      body='senshinkan@hakko-denshin-ryu.com'
       icon={EmailIcon}
-      title='Email'
+      localeId={{
+        title: 'page.contact.email.title',
+        description: 'page.contact.email.description',
+      }}
     />
   );
 };

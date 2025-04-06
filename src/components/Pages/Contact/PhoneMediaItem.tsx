@@ -5,7 +5,13 @@ import LocalPhoneIcon from '@mui/icons-material/LocalPhone';
 
 const PhoneMediaItem = () => {
   return (
-    <MediaItem body='+40 735 538 558' icon={LocalPhoneIcon} title='Phone'>
+    <MediaItem
+      icon={LocalPhoneIcon}
+      localeId={{
+        title: 'page.contact.phone.title',
+        description: 'page.contact.phone.description',
+      }}
+    >
       <Typography>Sensei Alexandru Barbulescu</Typography>
     </MediaItem>
   );

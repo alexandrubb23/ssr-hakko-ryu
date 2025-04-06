@@ -1,4 +1,3 @@
-import { setLangCookie } from '@utils/lang-utils';
 import { create } from 'zustand';
 import { persist } from 'zustand/middleware';
 
@@ -12,26 +11,21 @@ interface LangStore {
   setHydrated: () => void;
 }
 
+const DEFAULT_LANG = 'ro';
 export const LANG_STORAGE_KEY = 'lang-storage';
 
-export const useLang = create<LangStore>()(
+const useLangStore = create<LangStore>()(
   persist(
-    (set, get) => ({
-      lang: 'ro',
+    set => ({
+      lang: DEFAULT_LANG,
       hydrated: false,
-      toggleLang: () => {
-        const newLang = get().lang === 'ro' ? 'en' : 'ro';
-        set({ lang: newLang });
-        setLangCookie(newLang);
-      },
-      setLang: (lang: Lang) => {
-        set({ lang });
-        setLangCookie(lang);
-      },
+      toggleLang: () =>
+        set(state => ({ lang: state.lang === 'ro' ? 'en' : 'ro' })),
+      setLang: lang => set({ lang }),
       setHydrated: () => set({ hydrated: true }),
     }),
     {
-      name: 'lang-storage',
+      name: LANG_STORAGE_KEY,
       onRehydrateStorage: () => state => {
         state?.setHydrated();
       },
@@ -39,4 +33,4 @@ export const useLang = create<LangStore>()(
   )
 );
 
-export default useLang;
+export default useLangStore;

@@ -1,6 +1,6 @@
 /// <reference types="vite/client" />
 
-import { Lang } from '@store/useLang';
+import { Lang } from '@store/useLangStore';
 
 export {};
 

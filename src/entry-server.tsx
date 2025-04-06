@@ -1,22 +1,18 @@
 import createEmotionServer from '@emotion/server/create-instance';
+import cookie from 'cookie';
 import { renderToString } from 'react-dom/server';
 import { StaticRouter } from 'react-router';
-import cookie from 'cookie';
 
+import Providers from '@providers/Providers';
+import { Lang } from '@store/useLangStore';
+import { prefetch } from '@utils/api-requests';
 import { AppRoutes } from './AppRoutes';
 import createEmotionCache from './createEmotionCache';
 import { pages } from './pages';
-import Providers from '@providers/Providers';
-import { prefetch } from '@utils/api-requests';
-import { Lang } from '@store/useLang';
 
 export async function render(url: string, rawCookies: string) {
   const cookies = cookie.parse(rawCookies || '');
-  const lang = cookies['lang'] || 'ro';
-
-  console.log('====================================');
-  console.log(cookies['lang']);
-  console.log('====================================');
+  const lang = cookies['lang'] as Lang;
 
   const cache = createEmotionCache();
   const { extractCriticalToChunks, constructStyleTagsFromChunks } =
@@ -30,7 +26,7 @@ export async function render(url: string, rawCookies: string) {
   const loaderData = await prefetch(normalizedUrl);
 
   const html = renderToString(
-    <Providers cache={cache} lang={lang as Lang}>
+    <Providers cache={cache}>
       <StaticRouter
         location={{
           pathname: `/${url}`,

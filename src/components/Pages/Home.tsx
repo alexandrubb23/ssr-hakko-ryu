@@ -1,41 +1,6 @@
-import Spinner from '@components/Spinner/Spinner';
 import { Typography } from '@mui/material';
-import { useQuery } from '@tanstack/react-query';
 
-type Post = {
-  id: number;
-  title: string;
-  body: string;
-};
-
-export const fetchPosts = async () => {
-  const posts = await fetch('https://jsonplaceholder.typicode.com/posts').then(
-    res => res.json()
-  );
-
-  return posts;
-};
-
-const Home = ({ data }: { data: Post[] }) => {
-  const {
-    data: posts,
-    isLoading,
-    error,
-  } = useQuery<Post[], Error>({
-    queryKey: ['posts'],
-    queryFn: fetchPosts,
-    staleTime: 5 * 60 * 1000, // 5 minutes
-    // initialData: data.length ? data : undefined,
-  });
-
-  if (isLoading) {
-    return <Spinner />;
-  }
-
-  if (error) {
-    return <Typography variant='h4'>Error: {error.message}</Typography>;
-  }
-
+const Home = () => {
   return (
     <>
       <Typography color='primary' variant='h2' align='center' data-aos='fade'>

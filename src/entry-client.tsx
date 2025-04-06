@@ -8,17 +8,18 @@ import Providers from '@providers/Providers';
 
 const cache = createEmotionCache();
 
-const lang = window.__INITIAL_LANG__ || 'ro';
 const initialLoaderData = window.__INITIAL_DATA__ || [];
 
-const Main = () => (
-  <StrictMode>
-    <Providers cache={cache} lang={lang}>
-      <BrowserRouter>
-        <AppRoutes initialLoaderData={initialLoaderData} />
-      </BrowserRouter>
-    </Providers>
-  </StrictMode>
-);
+const Main = () => {
+  return (
+    <StrictMode>
+      <Providers cache={cache}>
+        <BrowserRouter>
+          <AppRoutes initialLoaderData={initialLoaderData} />
+        </BrowserRouter>
+      </Providers>
+    </StrictMode>
+  );
+};
 
 hydrateRoot(document.getElementById('root') as HTMLElement, <Main />);

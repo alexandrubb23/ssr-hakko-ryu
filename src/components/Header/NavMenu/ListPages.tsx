@@ -2,7 +2,7 @@ import { Button, List, ListItem, SxProps, Typography } from '@mui/material';
 import { styled, Theme } from '@mui/material/styles';
 import { pages } from '../../../pages';
 import { Link, useLocation } from 'react-router';
-import useLang from '@store/useLang';
+import useLangStore from '@store/useLangStore';
 import FormattedMessage from '@components/FormattedMessage/FormattedMessage';
 import { normalizePath } from '@utils/routes';
 import LanguageSwitcher from '@components/LanguageSwitcher/LanguageSwitcher';

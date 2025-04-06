@@ -5,18 +5,19 @@ import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { PropsWithChildren } from 'react';
 import { IntlProvider } from 'react-intl';
 
-import { Lang } from '@store/useLang';
+import useLangStore from '@store/useLangStore';
 import { messages } from '../i18n/messages';
 import theme from '../style/theme';
 
 interface Props {
   cache: EmotionCache;
-  lang: Lang;
 }
 
 const queryClient = new QueryClient();
 
-const Providers = ({ children, cache, lang }: PropsWithChildren<Props>) => {
+const Providers = ({ children, cache }: PropsWithChildren<Props>) => {
+  const { lang } = useLangStore();
+
   return (
     <CacheProvider value={cache}>
       <IntlProvider locale={lang} messages={messages[lang]}>

@@ -4,13 +4,14 @@ import 'aos/dist/aos.css';
 import { useEffect } from 'react';
 
 import useBlur from '@hooks/useBlur';
-import useLang from '@store/useLang';
 import './App.css';
 import Content from './components/Content/Content';
 import Footer from './components/Footer/Footer';
 import Header from './components/Header/Header';
 import { PAGE_TRANSITION_DURATION } from './constants/animationsTiming';
 import useBackgroundImage from './hooks/useBackgroundImage';
+import useLangStore from '@store/useLangStore';
+import Spinner from '@components/Spinner/Spinner';
 
 const BoxStyled = styled(Box, {
   shouldForwardProp: prop => prop !== 'bgImage' && prop !== 'blur',
@@ -37,8 +38,36 @@ const BoxStyled = styled(Box, {
     }
 );
 
+const StackStyled = styled(Stack)<{
+  hydrated: boolean;
+}>(({ hydrated }) => ({
+  display: hydrated ? 'flex' : 'none',
+  flexDirection: 'column',
+  height: '100vh',
+  justifyContent: 'space-between',
+  gap: 4,
+  opacity: 0,
+  animation: `fadeIn ${PAGE_TRANSITION_DURATION / 1000}s ease-in forwards`,
+}));
+
+const LoadingHydration = () => {
+  return (
+    <Box
+      sx={{
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        height: '100vh',
+      }}
+    >
+      <Spinner />
+    </Box>
+  );
+};
+
 const App = () => {
   const blur = useBlur();
+  const { hydrated } = useLangStore();
   const bgImage = useBackgroundImage();
 
   useEffect(() => {
@@ -49,19 +78,12 @@ const App = () => {
 
   return (
     <BoxStyled bgImage={bgImage} blur={blur}>
-      <Stack
-        sx={{
-          display: 'flex',
-          flexDirection: 'column',
-          height: '100vh',
-          justifyContent: 'space-between',
-          gap: 4,
-        }}
-      >
+      {!hydrated && <LoadingHydration />}
+      <StackStyled hydrated={hydrated}>
         <Header />
         <Content />
         <Footer />
-      </Stack>
+      </StackStyled>
     </BoxStyled>
   );
 };

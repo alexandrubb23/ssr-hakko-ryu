@@ -3,7 +3,7 @@ import React from 'react';
 import homeBgImage from '@assets/images/bg_home.jpg';
 import Contact from '@components/Pages/Contact/Contact';
 import Dojo from '@components/Pages/Dojo';
-import Home, { fetchPosts } from '@components/Pages/Home';
+import Home from '@components/Pages/Home';
 import Senshinkan from '@components/Pages/Senshinkan';
 import HakkoRyu from './components/Pages/HakkoRyu';
 
@@ -21,7 +21,6 @@ export const pages: Page[] = [
   {
     bgImage: homeBgImage,
     component: Home,
-    loader: fetchPosts,
     path: 'home',
     title: 'Home Page',
   },

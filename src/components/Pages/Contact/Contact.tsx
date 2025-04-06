@@ -8,6 +8,10 @@ import AddressMediaItem from './AddressMediaItem';
 import EmailMediaItem from './EmailMediaItem';
 import PhoneMediaItem from './PhoneMediaItem';
 import SocialMediaItem from './SocialMediaItem';
+import FormattedMessage from '@components/FormattedMessage/FormattedMessage';
+import MediaItem from '@components/MediaObject/MediaItem';
+
+import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
 
 const Contact = () => {
   return (
@@ -28,10 +32,18 @@ const Contact = () => {
         direction={{ xs: 'column', sm: 'row' }}
         data-aos='fade'
       >
-        <Box>
-          <Typography variant='h4'>Contact Us</Typography>
+        <Box
+          sx={{
+            maxWidth: {
+              sm: 300,
+            },
+          }}
+        >
+          <Typography variant='h4'>
+            <FormattedMessage id='page.contact.title' />
+          </Typography>
           <Typography variant='body1'>
-            We would love to hear from you! Please reach out to us at:
+            <FormattedMessage id='page.contact.description' />
           </Typography>
         </Box>
         <Box sx={{ display: 'flex', flexDirection: 'column', gap: 2 }}>
@@ -39,6 +51,13 @@ const Contact = () => {
           <EmailMediaItem />
         </Box>
         <Box sx={{ display: 'flex', flexDirection: 'column', gap: 2 }}>
+          <MediaItem
+            icon={CalendarMonthIcon}
+            localeId={{
+              title: 'page.contact.schedule.title',
+              description: 'page.contact.schedule.description',
+            }}
+          />
           <SocialMediaItem />
           <PhoneMediaItem />
         </Box>

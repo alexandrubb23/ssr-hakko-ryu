@@ -1,11 +1,11 @@
 import { Button } from '@mui/material';
 
-import useLang from '@store/useLang';
+import useLangStore from '@store/useLangStore';
 
 const LanguageSwitcher = () => {
-  const { lang, toggleLang } = useLang();
+  const { lang, toggleLang } = useLangStore();
 
-  const label = lang === 'ro' ? 'RO' : 'EN';
+  const label = lang === 'ro' ? 'EN' : 'RO';
 
   return (
     <Button variant='contained' onClick={toggleLang}>

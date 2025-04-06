@@ -8,7 +8,12 @@ import YouTubeIcon from '@mui/icons-material/YouTube';
 
 const SocialMediaItem = () => {
   return (
-    <MediaItem icon={WebAssetIcon} title='Social Media'>
+    <MediaItem
+      icon={WebAssetIcon}
+      localeId={{
+        title: 'page.contact.social.title',
+      }}
+    >
       <Box
         sx={{
           display: 'flex',

@@ -9,7 +9,13 @@ type FormatedMessageProps = {
 };
 
 const FormattedMessage = (props: FormatedMessageProps) => (
-  <ReactFormattedMessage {...props} />
+  <ReactFormattedMessage
+    values={{
+      span: (value: React.ReactNode) => <span>{value}</span>,
+      strong: (value: React.ReactNode) => <strong>{value}</strong>,
+    }}
+    {...props}
+  />
 );
 
 export default FormattedMessage;

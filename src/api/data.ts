@@ -1,4 +1,4 @@
-import { Lang } from '@store/useLang';
+import { Lang } from '@store/useLangStore';
 
 type Data = {
   root: {

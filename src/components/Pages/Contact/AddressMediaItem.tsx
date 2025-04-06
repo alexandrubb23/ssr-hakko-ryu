@@ -4,9 +4,11 @@ import LocationOnIcon from '@mui/icons-material/LocationOn';
 const AddressMediaItem = () => {
   return (
     <MediaItem
-      body='Aleea Paradisul Verde 2 Corbeanca'
       icon={LocationOnIcon}
-      title='Address'
+      localeId={{
+        title: 'page.contact.address.title',
+        description: 'page.contact.address.description',
+      }}
     />
   );
 };
