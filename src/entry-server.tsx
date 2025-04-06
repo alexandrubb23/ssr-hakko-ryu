@@ -36,9 +36,10 @@ export async function render(url: string) {
   const emotionChunks = extractCriticalToChunks(html);
   const styles = constructStyleTagsFromChunks(emotionChunks);
   const head = `
-      <script>window.__INITIAL_DATA__ = ${JSON.stringify(loaderData)}</script>
-      ${styles}
-    `;
+    <title>${title}</title>
+    <script>window.__INITIAL_DATA__ = ${JSON.stringify(loaderData)}</script>
+    ${styles}
+  `;
 
   return { html, head, title };
 }

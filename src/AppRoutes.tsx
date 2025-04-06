@@ -1,6 +1,7 @@
+import { normalizePath } from '@utils/routes';
 import { Route, Routes } from 'react-router';
-import { pages } from './pages';
 import App from './App';
+import { pages } from './pages';
 
 interface AppRoutesProps {
   initialLoaderData: any;
@@ -13,7 +14,7 @@ export const AppRoutes = ({ initialLoaderData }: AppRoutesProps) => {
         {pages.map(({ path, component: Component }, index) => (
           <Route
             key={path}
-            path={path}
+            path={normalizePath(path)}
             index={index === 0}
             element={<Component data={initialLoaderData} />}
           />

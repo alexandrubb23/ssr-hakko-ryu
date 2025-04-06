@@ -32,11 +32,14 @@ if (!isProduction) {
   app.use(base, sirv('./dist/client', { extensions: [] }));
 }
 
+app.use('/api', (req, res) => {
+  res.json({ message: 'Hello from API!' });
+});
+
 // Serve HTML
 app.use('*all', async (req, res) => {
   try {
     const url = req.originalUrl.replace(base, '');
-    console.log({ url });
 
     /** @type {string} */
     let template;
@@ -50,10 +53,6 @@ app.use('*all', async (req, res) => {
     } else {
       template = templateHtml;
       render = (await import('./dist/server/entry-server.js')).render;
-    }
-
-    if (url === 'favicon.ico') {
-      return res.sendStatus(204); // No Content
     }
 
     const rendered = await render(url);

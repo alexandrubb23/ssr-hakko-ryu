@@ -7,9 +7,10 @@ import Home, { fetchPosts } from '@components/Pages/Home';
 import Senshinkan from '@components/Pages/Senshinkan';
 import HakkoRyu from './components/Pages/HakkoRyu';
 
+export type PagePath = 'home' | 'hakko-ryu' | 'senshinkan' | 'dojo' | 'contact';
+
 export interface Page {
-  path: string;
-  label: string;
+  path: PagePath;
   title: string;
   bgImage?: string;
   loader?: () => Promise<unknown>;
@@ -20,32 +21,27 @@ export const pages: Page[] = [
   {
     bgImage: homeBgImage,
     component: Home,
-    label: 'Home',
     loader: fetchPosts,
-    path: '/',
+    path: 'home',
     title: 'Home Page',
   },
   {
     component: HakkoRyu,
-    label: 'Hakko Ryu',
-    path: '/hakko-ryu',
+    path: 'hakko-ryu',
     title: 'Hakko Ryu Page',
   },
   {
     component: Senshinkan,
-    label: 'Senshinkan',
-    path: '/senshinkan',
+    path: 'senshinkan',
     title: 'Senshinkan Page',
   },
   {
     component: Dojo,
-    label: 'Dojo',
-    path: '/dojo',
+    path: 'dojo',
     title: 'Dojo Page',
   },
   {
-    label: 'Contact',
-    path: '/contact',
+    path: 'contact',
     component: Contact,
     title: 'Contact Page',
   },

@@ -1,3 +1,4 @@
+import FormattedMessage from '@components/FormattedMessage/FormattedMessage';
 import { Box, Typography } from '@mui/material';
 
 const Footer = () => {
@@ -11,7 +12,8 @@ const Footer = () => {
         color='text.secondary'
         sx={{ padding: '20px', textAlign: 'center' }}
       >
-        &copy; 2025, Senshinkan Romania All Rights Reserved
+        &copy; 2025, Senshinkan Romania{' '}
+        <FormattedMessage id='footer.copyrights' />
       </Typography>
     </Box>
   );

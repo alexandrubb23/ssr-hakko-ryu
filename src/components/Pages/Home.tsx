@@ -45,7 +45,7 @@ const Home = ({ data }: { data: Post[] }) => {
         Senshinkan Romania
       </Typography>
       <Typography variant='h4' data-aos='fade' align='center'>
-        {JSON.stringify(posts)}
+        {/* {JSON.stringify(posts)} */}
       </Typography>
     </>
   );

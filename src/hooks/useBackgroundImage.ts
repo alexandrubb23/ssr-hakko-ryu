@@ -5,10 +5,10 @@ import { pages } from '../pages';
 const useBackgroundImage = () => {
   const { pathname } = useLocation();
 
-  return useMemo(
-    () => pages.find(page => page.path === pathname)?.bgImage,
-    [pathname]
-  );
+  return useMemo(() => {
+    const path = pathname === '/' ? 'home' : pathname;
+    return pages.find(page => page.path === path)?.bgImage;
+  }, [pathname]);
 };
 
 export default useBackgroundImage;

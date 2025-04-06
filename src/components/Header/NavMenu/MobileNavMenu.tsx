@@ -89,13 +89,14 @@ const MobileNavMenu = () => {
           zIndex: 1,
         }}
       >
-        <List
+        <ListPages
+          onPageChange={handlePageChange}
           sx={{
-            top: 100,
+            item: {
+              top: 100,
+            },
           }}
-        >
-          <ListPages onPageChange={handlePageChange} />
-        </List>
+        />
       </BoxStyled>
     </>
   );

@@ -1,22 +1,19 @@
-import { List } from '@mui/material';
 import ListPages from './ListPages';
 
-const DesktopNavMenu = () => {
-  return (
-    <List
-      sx={{
+const DesktopNavMenu = () => (
+  <ListPages
+    sx={{
+      list: {
         display: 'flex',
         alignItems: 'center',
         textAlign: 'center',
-      }}
-    >
-      <ListPages
-        sx={{
-          width: 'fit-content',
-        }}
-      />
-    </List>
-  );
-};
+      },
+      item: {
+        width: 'fit-content',
+        whiteSpace: 'nowrap',
+      },
+    }}
+  />
+);
 
 export default DesktopNavMenu;

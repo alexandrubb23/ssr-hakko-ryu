@@ -3,13 +3,14 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { useEffect } from 'react';
 
+import useBlur from '@hooks/useBlur';
+import useLang from '@store/useLang';
 import './App.css';
 import Content from './components/Content/Content';
 import Footer from './components/Footer/Footer';
 import Header from './components/Header/Header';
 import { PAGE_TRANSITION_DURATION } from './constants/animationsTiming';
 import useBackgroundImage from './hooks/useBackgroundImage';
-import useBlur from '@hooks/useBlur';
 
 const BoxStyled = styled(Box, {
   shouldForwardProp: prop => prop !== 'bgImage' && prop !== 'blur',
