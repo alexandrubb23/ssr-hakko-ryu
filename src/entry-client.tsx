@@ -1,6 +1,6 @@
 import { StrictMode } from 'react';
 import { hydrateRoot } from 'react-dom/client';
-import { BrowserRouter } from 'react-router-dom';
+import { BrowserRouter } from 'react-router';
 
 import { AppRoutes } from './AppRoutes';
 import createEmotionCache from './createEmotionCache';

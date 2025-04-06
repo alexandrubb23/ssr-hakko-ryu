@@ -1,7 +1,7 @@
 import { ListItem, SxProps, Typography } from '@mui/material';
 import { styled, Theme } from '@mui/material/styles';
 import { pages } from '../../../pages';
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation } from 'react-router';
 
 interface Props {
   sx?: SxProps<Theme>;

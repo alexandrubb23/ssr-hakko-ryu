@@ -1,7 +1,7 @@
 import createEmotionServer from '@emotion/server/create-instance';
 import { renderToString } from 'react-dom/server';
 
-import { StaticRouter } from 'react-router-dom/server';
+import { StaticRouter } from 'react-router';
 
 import { AppRoutes } from './AppRoutes';
 import createEmotionCache from './createEmotionCache';
