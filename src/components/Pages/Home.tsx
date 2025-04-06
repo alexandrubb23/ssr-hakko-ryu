@@ -25,7 +25,7 @@ const Home = ({ data }: { data: Post[] }) => {
     queryKey: ['posts'],
     queryFn: fetchPosts,
     staleTime: 5 * 60 * 1000, // 5 minutes
-    initialData: data.length ? data : undefined,
+    // initialData: data.length ? data : undefined,
   });
 
   if (isLoading) {

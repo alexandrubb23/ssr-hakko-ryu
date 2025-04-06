@@ -39,6 +39,7 @@ app.use('/api', (req, res) => {
 // Serve HTML
 app.use('*all', async (req, res) => {
   try {
+    const rawCookies = req.headers.cookie;
     const url = req.originalUrl.replace(base, '');
 
     /** @type {string} */
@@ -55,7 +56,7 @@ app.use('*all', async (req, res) => {
       render = (await import('./dist/server/entry-server.js')).render;
     }
 
-    const rendered = await render(url);
+    const rendered = await render(url, rawCookies);
 
     const html = template
       .replace(`<!--app-head-->`, rendered.head ?? '')
