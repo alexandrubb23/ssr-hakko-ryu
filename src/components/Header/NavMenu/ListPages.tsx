@@ -5,6 +5,7 @@ import { Link, useLocation } from 'react-router';
 import useLang from '@store/useLang';
 import FormattedMessage from '@components/FormattedMessage/FormattedMessage';
 import { normalizePath } from '@utils/routes';
+import LanguageSwitcher from '@components/LanguageSwitcher/LanguageSwitcher';
 
 interface Props {
   sx?: {
@@ -31,15 +32,12 @@ const ListItemStyle = styled(ListItem)(({ sx }) => ({
 
 const ListPages = ({ sx, onPageChange }: Props) => {
   const location = useLocation();
-  const { lang, toggleLang } = useLang();
 
   return (
     <>
       <List sx={sx?.list}>
         <ListItemStyle>
-          <Button variant='contained' onClick={toggleLang}>
-            {lang === 'ro' ? 'EN' : 'RO'}
-          </Button>
+          <LanguageSwitcher />
         </ListItemStyle>
         {pages.map(page => {
           return (
