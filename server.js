@@ -39,7 +39,6 @@ app.use('/api', (req, res) => {
 // Serve HTML
 app.use('*all', async (req, res) => {
   try {
-    const rawCookies = req.headers.cookie;
     const url = req.originalUrl.replace(base, '');
 
     /** @type {string} */
@@ -51,14 +50,13 @@ app.use('*all', async (req, res) => {
       template = await fs.readFile('./index.html', 'utf-8');
       template = await vite.transformIndexHtml(url, template);
 
-      console.log({ template });
       render = (await vite.ssrLoadModule('/src/entry-server.jsx')).render;
     } else {
       template = templateHtml;
       render = (await import('./dist/server/entry-server.js')).render;
     }
 
-    const rendered = await render(url, rawCookies);
+    const rendered = await render(url);
 
     const html = template
       .replace(`<!--app-head-->`, rendered.head ?? '')
