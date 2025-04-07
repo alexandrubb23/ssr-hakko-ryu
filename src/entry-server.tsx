@@ -7,16 +7,18 @@ import { prefetch } from '@utils/api-requests';
 import { AppRoutes } from './AppRoutes';
 import createEmotionCache from './createEmotionCache';
 import { pages } from './pages';
+import { normalizePath } from '@utils/routes';
 
 export async function render(url: string) {
   const cache = createEmotionCache();
   const { extractCriticalToChunks, constructStyleTagsFromChunks } =
     createEmotionServer(cache);
 
-  const normalizedUrl = `/${url}`.replace(/\/+/g, '/');
+  const normalizedUrl = normalizePath(url);
 
   const title =
-    pages.find(route => route.path === normalizedUrl)?.title || 'Default Title';
+    pages.find(route => normalizePath(route.path) === normalizedUrl)?.title ||
+    'Default Title';
 
   const loaderData = await prefetch(normalizedUrl);
 
@@ -24,7 +26,7 @@ export async function render(url: string) {
     <Providers cache={cache}>
       <StaticRouter
         location={{
-          pathname: `/${url}`,
+          pathname: normalizedUrl,
         }}
       >
         <AppRoutes initialLoaderData={loaderData} />
