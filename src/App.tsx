@@ -1,17 +1,17 @@
-import { Box, Stack, styled } from '@mui/material';
-import AOS from 'aos';
 import 'aos/dist/aos.css';
+import { Box, Stack, styled } from '@mui/material';
 import { useEffect } from 'react';
+import AOS from 'aos';
 
-import useBlur from '@hooks/useBlur';
 import './App.css';
+import { PAGE_TRANSITION_DURATION } from './constants/animationsTiming';
+import CenterSpinner from '@components/Spinner/CenterSpinner';
 import Content from './components/Content/Content';
 import Footer from './components/Footer/Footer';
 import Header from './components/Header/Header';
-import { PAGE_TRANSITION_DURATION } from './constants/animationsTiming';
 import useBackgroundImage from './hooks/useBackgroundImage';
+import useBlur from '@hooks/useBlur';
 import useLangStore from '@store/useLangStore';
-import Spinner from '@components/Spinner/Spinner';
 
 const BoxStyled = styled(Box, {
   shouldForwardProp: prop => prop !== 'bgImage' && prop !== 'blur',
@@ -38,7 +38,9 @@ const BoxStyled = styled(Box, {
     }
 );
 
-const StackStyled = styled(Stack)<{
+const StackStyled = styled(Stack, {
+  shouldForwardProp: prop => prop !== 'hydrated',
+})<{
   hydrated: boolean;
 }>(({ hydrated }) => ({
   display: hydrated ? 'flex' : 'none',
@@ -49,21 +51,6 @@ const StackStyled = styled(Stack)<{
   opacity: 0,
   animation: `fadeIn ${PAGE_TRANSITION_DURATION / 1000}s ease-in forwards`,
 }));
-
-const LoadingHydration = () => {
-  return (
-    <Box
-      sx={{
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        height: '100vh',
-      }}
-    >
-      <Spinner />
-    </Box>
-  );
-};
 
 const App = () => {
   const blur = useBlur();
@@ -78,7 +65,7 @@ const App = () => {
 
   return (
     <BoxStyled bgImage={bgImage} blur={blur}>
-      {!hydrated && <LoadingHydration />}
+      {!hydrated && <CenterSpinner />}
       <StackStyled hydrated={hydrated}>
         <Header />
         <Content />

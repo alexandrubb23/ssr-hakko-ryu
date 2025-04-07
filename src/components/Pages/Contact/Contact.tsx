@@ -35,7 +35,7 @@ const Contact = () => {
         <Box
           sx={{
             maxWidth: {
-              sm: 300,
+              sm: 250,
             },
           }}
         >
@@ -46,7 +46,7 @@ const Contact = () => {
             <FormattedMessage id='page.contact.description' />
           </Typography>
         </Box>
-        <Box sx={{ display: 'flex', flexDirection: 'column', gap: 2 }}>
+        <Box sx={{ display: 'flex', flexDirection: 'column', gap: 2, flex: 1 }}>
           <AddressMediaItem />
           <EmailMediaItem />
         </Box>

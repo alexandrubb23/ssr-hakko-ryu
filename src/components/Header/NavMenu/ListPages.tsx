@@ -1,11 +1,10 @@
-import { Button, List, ListItem, SxProps, Typography } from '@mui/material';
-import { styled, Theme } from '@mui/material/styles';
-import { pages } from '../../../pages';
-import { Link, useLocation } from 'react-router';
-import useLangStore from '@store/useLangStore';
 import FormattedMessage from '@components/FormattedMessage/FormattedMessage';
-import { normalizePath } from '@utils/routes';
 import LanguageSwitcher from '@components/LanguageSwitcher/LanguageSwitcher';
+import { List, ListItem, SxProps, Typography } from '@mui/material';
+import { styled, Theme } from '@mui/material/styles';
+import { normalizePath } from '@utils/routes';
+import { Link, useLocation } from 'react-router';
+import { pages } from '../../../pages';
 
 interface Props {
   sx?: {
@@ -36,7 +35,11 @@ const ListPages = ({ sx, onPageChange }: Props) => {
   return (
     <>
       <List sx={sx?.list}>
-        <ListItemStyle>
+        <ListItemStyle
+          sx={{
+            paddingTop: 0,
+          }}
+        >
           <LanguageSwitcher />
         </ListItemStyle>
         {pages.map(page => {
@@ -48,7 +51,9 @@ const ListPages = ({ sx, onPageChange }: Props) => {
                   textAlign: 'center',
                   a: {
                     color:
-                      location.pathname === page.path ? '#AB96FF' : 'white',
+                      location.pathname === normalizePath(page.path)
+                        ? '#AB96FF'
+                        : 'white',
                   },
                   'a:hover': {
                     color: 'inherit',
