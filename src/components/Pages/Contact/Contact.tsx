@@ -4,14 +4,12 @@ import alexHighQualityImage from '@assets/images/high-res-gust-2.jpg';
 import alexLowQualityImage from '@assets/images/low-res-gust-2.jpg';
 import BlurredUpImage from '@components/Image/BlurredUpImage';
 
+import FormattedMessage from '@components/FormattedMessage/FormattedMessage';
 import AddressMediaItem from './AddressMediaItem';
 import EmailMediaItem from './EmailMediaItem';
 import PhoneMediaItem from './PhoneMediaItem';
 import SocialMediaItem from './SocialMediaItem';
-import FormattedMessage from '@components/FormattedMessage/FormattedMessage';
-import MediaItem from '@components/MediaObject/MediaItem';
-
-import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
+import ScheduleMediaItem from './ScheduleMediaItem';
 
 const Contact = () => {
   return (
@@ -48,18 +46,12 @@ const Contact = () => {
         </Box>
         <Box sx={{ display: 'flex', flexDirection: 'column', gap: 2, flex: 1 }}>
           <AddressMediaItem />
-          <EmailMediaItem />
+          <ScheduleMediaItem />
         </Box>
         <Box sx={{ display: 'flex', flexDirection: 'column', gap: 2 }}>
-          <MediaItem
-            icon={CalendarMonthIcon}
-            localeId={{
-              title: 'page.contact.schedule.title',
-              description: 'page.contact.schedule.description',
-            }}
-          />
-          <SocialMediaItem />
+          <EmailMediaItem />
           <PhoneMediaItem />
+          <SocialMediaItem />
         </Box>
       </Stack>
     </Box>
