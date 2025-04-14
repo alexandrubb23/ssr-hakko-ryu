@@ -25,6 +25,30 @@ a:hover {
   text-align: center;
 }
 
+blockquote {
+  margin: 10px auto;
+  padding: 15px;
+  border-radius: 5px;
+  font-style: italic;
+  position: relative;
+  font-size: 2rem;
+}
+
+blockquote p::before {
+  content: '\201C';
+  position: absolute;
+  bottom: 7px;
+  left: 9px;
+}
+
+blockquote p::after {
+  content: '\201D';
+}
+
+blockquote + p {
+  text-align: right;
+}
+
 @keyframes fadeIn {
   to {
     opacity: 1;

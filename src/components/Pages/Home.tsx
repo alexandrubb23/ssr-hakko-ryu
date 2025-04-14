@@ -1,5 +1,7 @@
+import RomaniaText from '@components/ColoredText/RomaniaText';
+import FormattedMessage from '@components/FormattedMessage/FormattedMessage';
 import Quotes from '@components/Quotes/Quotes';
-import { Typography } from '@mui/material';
+import { Box, Typography } from '@mui/material';
 
 type Quote = {
   quote: string;
@@ -71,21 +73,58 @@ const quotes: Quote[] = [
       'Success is not how high you have climbed, but how you make a positive difference to the world.',
     author: 'Roy T. Bennett',
   },
+  {
+    quote: 'Words are just opinions. Actions are the real truth.',
+    author: 'Marcus Aurelius',
+  },
 ];
 
 const Home = () => {
   return (
-    <>
-      <Typography color='primary' variant='h2' align='center' data-aos='fade'>
+    <Box>
+      <Typography
+        color='primary'
+        variant='h2'
+        align='center'
+        data-aos='fade'
+        sx={{
+          textShadow:
+            '0 0 5px rgba(0, 0, 0, 0.5), 0 0 10px rgba(0, 0, 0, 0.5), 0 0 15px rgba(0, 0, 0, 0.5)',
+        }}
+      >
         Hakko Denshin Ryu Ju Jutsu
       </Typography>
-      <Typography variant='h3' data-aos='fade' align='center'>
-        Senshinkan Romania
+      <Typography
+        variant='h2'
+        data-aos='fade'
+        align='center'
+        sx={{
+          textShadow:
+            '0 0 5px rgba(0, 0, 0, 0.5), 0 0 10px rgba(0, 0, 0, 0.5), 0 0 15px rgba(0, 0, 0, 0.5)',
+        }}
+      >
+        Senshinkan <RomaniaText />
       </Typography>
-      <Typography variant='h4' data-aos='fade' align='center'>
+      <Typography
+        variant='h4'
+        data-aos='fade'
+        align='center'
+        sx={{
+          textShadow:
+            '0 0 5px rgba(0, 0, 0, 0.5), 0 0 10px rgba(0, 0, 0, 0.5), 0 0 15px rgba(0, 0, 0, 0.5)',
+        }}
+      >
+        <FormattedMessage id='page.home.subtitle' />
+      </Typography>
+      <Box
+        sx={{
+          bottom: 70,
+          position: 'absolute',
+        }}
+      >
         <Quotes data={quotes} />
-      </Typography>
-    </>
+      </Box>
+    </Box>
   );
 };
 

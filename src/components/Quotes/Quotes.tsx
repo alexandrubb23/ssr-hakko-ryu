@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { useInterval } from 'usehooks-ts';
 
 import { getQuoteDisplayTime } from '@utils/time';
-import { Box } from '@mui/material';
+import { Box, Typography } from '@mui/material';
 import { AnimatePresence, motion } from 'framer-motion';
 
 export type Quote = {
@@ -27,6 +27,8 @@ const Quotes = ({ data }: Props) => {
     setKey(prev => prev + 1);
   }, getQuoteDisplayTime(data[currentQuote].quote));
 
+  const { author, quote } = data[currentQuote];
+
   return (
     <Box
       sx={{
@@ -36,33 +38,40 @@ const Quotes = ({ data }: Props) => {
         position: 'relative',
       }}
     >
-      <Box
-        sx={{
-          fontSize: '1.5rem',
-
-          transition: 'opacity 0.5s ease',
-        }}
-      >
-        <AnimatePresence mode='wait'>
-          <motion.div
-            key={key}
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -10 }}
-            transition={{ duration: 0.5 }}
-          >
-            <Box
+      <AnimatePresence mode='wait'>
+        <motion.div
+          key={key}
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: -10 }}
+          transition={{ duration: 0.5 }}
+        >
+          <>
+            <blockquote cite='https://www.huxley.net/bnw/four.html'>
+              <Typography
+                variant='body2'
+                sx={{
+                  fontSize: 'clamp(1rem, 2vw + 1rem, 1.5rem)',
+                  textShadow:
+                    '0 0 5px rgba(0, 0, 0, 0.5), 0 0 10px rgba(0, 0, 0, 0.5), 0 0 15px rgba(0, 0, 0, 0.5)',
+                }}
+              >
+                {quote}
+              </Typography>
+            </blockquote>
+            <Typography
+              variant='body2'
               sx={{
-                fontStyle: 'italic',
+                fontSize: 'clamp(1rem, 2vw + 1rem, 1.5rem)',
+                textShadow:
+                  '0 0 5px rgba(0, 0, 0, 0.5), 0 0 10px rgba(0, 0, 0, 0.5), 0 0 15px rgba(0, 0, 0, 0.5)',
               }}
-              component='span'
             >
-              "{data[currentQuote].quote}"
-            </Box>
-            <Box component='span'> - {data[currentQuote].author}</Box>
-          </motion.div>
-        </AnimatePresence>
-      </Box>
+              —{author},
+            </Typography>
+          </>
+        </motion.div>
+      </AnimatePresence>
     </Box>
   );
 };

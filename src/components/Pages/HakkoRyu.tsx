@@ -12,8 +12,6 @@ const HakkoRyu = () => {
       sx={{
         display: 'flex',
         flexDirection: 'column',
-        alignItems: 'center',
-        justifyContent: 'center',
         gap: 2,
       }}
     >
@@ -79,8 +77,75 @@ const HakkoRyu = () => {
         }}
         data-aos='fade'
       />
-      <Typography color='primary' variant='h4' gutterBottom data-aos='fade'>
-        Ju Jutsu
+      <Typography
+        align='center'
+        color='primary'
+        variant='h4'
+        gutterBottom
+        data-aos='fade'
+      >
+        Hakko Denshin Ryu Ju Jutsu
+      </Typography>
+      <Typography
+        variant='body1'
+        color='text.primary'
+        align='left'
+        data-aos='fade'
+      >
+        In 1997, many practitioners, willing to preserve the spirit and
+        teachings of Shodai Soke Okuyama, formed a new association called Kokodo
+        Renmei (皇光道連盟) and founded a new school: the Hakko Denshin Ryu
+        (八光伝心流) whose name can be translated as "Eighth Light Original
+        Spirit School".
+      </Typography>
+      <Typography
+        variant='body1'
+        color='text.primary'
+        align='left'
+        data-aos='fade'
+      >
+        The founders of Kokodo Renmei (皇光道連盟) are (from left to right):
+        Michael J. LaMonica, Antonio Garcia and Yasuhiro Irie (入江安博).
+      </Typography>
+      <Typography
+        variant='body1'
+        color='text.primary'
+        align='left'
+        data-aos='fade'
+      >
+        The direction of Hakko Denshin Ryu is represented by : Michael J.
+        LaMonica, Soke for America, and Antonio Garcia, Soke for Europe.
+      </Typography>
+      <Typography
+        variant='body1'
+        color='text.primary'
+        align='left'
+        data-aos='fade'
+      >
+        As Hakko Ryu, Hakko Denshin Ryu is composed of three parts:
+      </Typography>
+
+      <Box
+        component='img'
+        src={image3}
+        sx={{
+          maxWidth: '100%',
+          height: 'auto',
+          maxHeight: '100vh',
+          objectFit: 'cover',
+          objectPosition: 'center',
+          aspectRatio: '16/9',
+        }}
+        data-aos='fade'
+      />
+      <Typography
+        align='center'
+        color='primary'
+        variant='h4'
+        gutterBottom
+        data-aos='fade'
+      >
+        Ju Jutsu 柔術
       </Typography>
       <Typography
         variant='body1'
@@ -142,6 +207,75 @@ const HakkoRyu = () => {
         observation, control, stability, adaptability, respect for others,
         health … and harmony. This is still the challenge that traditional
         Ju-Jutsu schools offer in our modern world.
+      </Typography>
+      <Box
+        component='img'
+        src={image3}
+        sx={{
+          maxWidth: '100%',
+          height: 'auto',
+          maxHeight: '100vh',
+          objectFit: 'cover',
+          objectPosition: 'center',
+          aspectRatio: '16/9',
+        }}
+        data-aos='fade'
+      />
+      <Typography
+        align='center'
+        color='primary'
+        variant='h4'
+        gutterBottom
+        data-aos='fade'
+      >
+        Shiatsu 指圧
+      </Typography>
+      <Typography
+        variant='body1'
+        color='text.primary'
+        align='left'
+        data-aos='fade'
+      >
+        Shi (指) means "finger" and atsu (圧), "pressure". Shiatsu is a
+        technique aiming at maintaining or recovering the energetical balance
+        our body needs to be healthy.
+      </Typography>
+      <Box
+        component='img'
+        src={image3}
+        sx={{
+          maxWidth: '100%',
+          height: 'auto',
+          maxHeight: '100vh',
+          objectFit: 'cover',
+          objectPosition: 'center',
+          aspectRatio: '16/9',
+        }}
+        data-aos='fade'
+      />
+      <Typography
+        align='center'
+        color='primary'
+        variant='h4'
+        gutterBottom
+        data-aos='fade'
+      >
+        Goshin Taiso 護身体操
+      </Typography>
+      <Typography
+        variant='body1'
+        color='text.primary'
+        align='left'
+        data-aos='fade'
+      >
+        Goshin (護身) signifie "protection, défense" et taiso (体操)
+        "gymnastique". Le Goshin Taiso est une gymnastique visant également à
+        maintenir l'équilibre des forces qui nous animent. Il se pratique seul
+        et permet aussi à chacun de poser un bilan énergétique. Goshin (護身)
+        means "protection" or "defence" and taiso (体操) "gymnastic". Goshin
+        Taiso is a gymnastic used to maintain the equilibrium of the forces
+        present in our body. It is practised alone and allows any individual to
+        make his own energetical evaluation.
       </Typography>
     </Box>
   );

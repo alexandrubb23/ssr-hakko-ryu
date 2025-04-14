@@ -5,17 +5,10 @@ interface ColoredTextProps {
   color: string;
 }
 
-const ColoredText = ({ text, color }: ColoredTextProps) => {
-  return (
-    <Box
-      component='span'
-      sx={{
-        color,
-      }}
-    >
-      {text}
-    </Box>
-  );
-};
+const ColoredText = ({ text, color }: ColoredTextProps) => (
+  <Box component='span' color={color}>
+    {text}
+  </Box>
+);
 
 export default ColoredText;

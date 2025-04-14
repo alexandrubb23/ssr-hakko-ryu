@@ -16,7 +16,7 @@ import useLangStore from '@store/useLangStore';
 const BoxStyled = styled(Box, {
   shouldForwardProp: prop => prop !== 'bgImage' && prop !== 'blur',
 })<{ bgImage?: string; blur: boolean }>(
-  ({ bgImage, blur }) =>
+  ({ bgImage, blur, theme }) =>
     bgImage && {
       position: 'relative',
       minHeight: 'calc(100vh  - 218px)',
@@ -31,9 +31,14 @@ const BoxStyled = styled(Box, {
         backgroundImage: `url(${bgImage})`,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
+        backgroundRepeat: 'no-repeat',
+        [theme.breakpoints.up('lg')]: {
+          aspectRatio: '10 / 9',
+        },
         filter: blur ? 'blur(20px)' : 'none',
         transition: blur ? 'none' : 'filter 0.3s ease-out',
         zIndex: -1,
+        opacity: 0.8,
       },
     }
 );

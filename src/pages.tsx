@@ -1,6 +1,6 @@
 import React from 'react';
 
-import homeBgImage from '@assets/images/bg_home.jpg';
+import homeBgImage from '@assets/images/alex-and-philip-yoko-katate-osae-dori.jpeg';
 import Contact from '@components/Pages/Contact/Contact';
 import Dojo from '@components/Pages/Dojo';
 import Home from '@components/Pages/Home';

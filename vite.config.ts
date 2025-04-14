@@ -5,6 +5,9 @@ import svgr from 'vite-plugin-svgr';
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [svgr(), react()],
+  server: {
+    allowedHosts: ['7fdb-82-76-213-1.ngrok-free.app'],
+  },
   resolve: {
     alias: {
       '@assets': '/src/assets',
