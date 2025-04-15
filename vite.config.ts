@@ -1,13 +1,13 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 import svgr from 'vite-plugin-svgr';
-import vercel from 'vite-plugin-vercel';
 
 // https://vite.dev/config/
 export default defineConfig({
-  plugins: [svgr(), react(), vercel()],
+  plugins: [svgr(), react()],
   ssr: {
-    noExternal: ['react', 'react-dom'],
+    noExternal: ['zustand'],
+    external: ['react', 'react-dom'],
   },
   resolve: {
     alias: {
