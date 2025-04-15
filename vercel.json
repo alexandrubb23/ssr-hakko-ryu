@@ -1,16 +1,16 @@
 {
   "version": 2,
   "builds": [
-    {
-      "src": "dist/server/entry-server.js",
-      "use": "@vercel/node",
-      "config": { "includeFiles": ["dist/**"] }
-    }
+    { "src": "api/index.ts", "use": "@vercel/node" }
   ],
   "routes": [
     {
+      "src": "/assets/(.*)",
+      "dest": "/dist/client/assets/$1"
+    },
+    {
       "src": "/(.*)",
-      "dest": "dist/server/entry-server.js"
+      "dest": "/api/index.ts"
     }
   ]
 }
