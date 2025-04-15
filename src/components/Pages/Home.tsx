@@ -83,7 +83,6 @@ const Home = () => {
   return (
     <Stack
       direction='column'
-      gap={8}
       sx={{
         height: {
           xs: 'calc(100vh / 1.7)',
@@ -94,6 +93,9 @@ const Home = () => {
       <Box
         sx={{
           flexGrow: 1,
+          display: 'flex',
+          gap: 2,
+          flexDirection: 'column',
         }}
       >
         <Typography

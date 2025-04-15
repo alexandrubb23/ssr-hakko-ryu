@@ -50,7 +50,7 @@ const Quotes = ({ data }: Props) => {
               <Typography
                 variant='body2'
                 sx={{
-                  fontSize: 'clamp(1rem, 2vw + 1rem, 1.5rem)',
+                  fontSize: 'clamp(1rem, 2vw, 1.5rem)',
                   textShadow:
                     '0 0 5px rgba(0, 0, 0, 0.5), 0 0 10px rgba(0, 0, 0, 0.5), 0 0 15px rgba(0, 0, 0, 0.5)',
                 }}
@@ -61,7 +61,7 @@ const Quotes = ({ data }: Props) => {
             <Typography
               variant='body2'
               sx={{
-                fontSize: 'clamp(1rem, 2vw + 1rem, 1.5rem)',
+                fontSize: 'clamp(1rem, 2vw, 1.5rem)',
                 textShadow:
                   '0 0 5px rgba(0, 0, 0, 0.5), 0 0 10px rgba(0, 0, 0, 0.5), 0 0 15px rgba(0, 0, 0, 0.5)',
               }}
