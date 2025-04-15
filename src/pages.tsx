@@ -1,11 +1,12 @@
 import React from 'react';
 
-import homeBgImage from '@assets/images/alex-and-philip-yoko-katate-osae-dori.jpeg';
 import Contact from '@components/Pages/Contact/Contact';
 import Dojo from '@components/Pages/Dojo';
 import Home from '@components/Pages/Home';
 import Senshinkan from '@components/Pages/Senshinkan';
 import HakkoRyu from './components/Pages/HakkoRyu';
+
+import homeBgImage from '@assets/images/home-alex-and-alex-conste.webp';
 
 export type PagePath = 'home' | 'hakko-ryu' | 'senshinkan' | 'dojo' | 'contact';
 

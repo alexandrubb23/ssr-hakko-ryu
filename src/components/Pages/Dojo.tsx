@@ -1,9 +1,8 @@
 import { Box, Typography } from '@mui/material';
 
-import dojoHighQualityImage from '@assets/images/dojo-kids.jpg';
-import dojoLowQualityImage from '@assets/images/low-res-dojo-kids.jpg';
-
 import BlurredUpImage from '../Image/BlurredUpImage';
+import dojoLowQualityImage from '@assets/images/dojo-kids-small.jpg';
+import dojoHighQualityImage from '@assets/images/dojo-kids.jpg';
 
 const Dojo = () => {
   return (

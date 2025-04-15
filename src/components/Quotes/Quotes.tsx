@@ -35,7 +35,6 @@ const Quotes = ({ data }: Props) => {
         minHeight: '3rem',
         overflow: 'hidden',
         padding: 2,
-        position: 'relative',
       }}
     >
       <AnimatePresence mode='wait'>

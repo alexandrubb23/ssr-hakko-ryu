@@ -1,9 +1,9 @@
 import { Box, Typography } from '@mui/material';
 
-import senshinkanHighQualityImage from '@assets/images/high-res-senshinkan.jpg';
-import senshinkanLowQualityImage from '@assets/images/low-res-senshinkan.jpg';
-
 import BlurredUpImage from '../Image/BlurredUpImage';
+
+import senshinkanLowQualityImage from '@assets/images/alex-bow-small.jpg';
+import senshinkanHighQualityImage from '@assets/images/alex-bow.webp';
 const Senshinkan = () => {
   return (
     <Box

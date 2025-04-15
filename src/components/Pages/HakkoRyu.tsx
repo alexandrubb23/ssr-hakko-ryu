@@ -1,10 +1,15 @@
 import { Box, Typography } from '@mui/material';
 
-import alexHighQualityImage from '@assets/images/high-res-gust-2.jpg';
-import alexLowQualityImage from '@assets/images/low-res-gust-2.jpg';
-import image3 from '@assets/images/gust-3.jpg';
-
 import BlurredUpImage from '../Image/BlurredUpImage';
+
+import hakkoRyuLowQualityImage from '@assets/images/alex-and-philip-shiho-nage-small.jpg';
+import hakkoRyuHighQualityImage from '@assets/images/alex-and-philip-shiho-nage.webp';
+
+import hakkoDenshinRyuHighQualityImage from '@assets/images/alex-and-mazen-shiho-nage-lock.webp';
+
+import jujutsuHighQualityImage from '@assets/images/alex-and-coste-waki-gatame.webp';
+import shiatsuHighQualityImage from '@assets/images/alex-and-coste-nage.webp';
+import goshinTaisoHighQualityImage from '@assets/images/philip-and-alex-waki-gatame.webp';
 
 const HakkoRyu = () => {
   return (
@@ -16,8 +21,8 @@ const HakkoRyu = () => {
       }}
     >
       <BlurredUpImage
-        highQualitySrc={alexHighQualityImage}
-        lowQualitySrc={alexLowQualityImage}
+        highQualitySrc={hakkoRyuHighQualityImage}
+        lowQualitySrc={hakkoRyuLowQualityImage}
       />
 
       <Typography
@@ -66,7 +71,7 @@ const HakkoRyu = () => {
 
       <Box
         component='img'
-        src={image3}
+        src={hakkoDenshinRyuHighQualityImage}
         sx={{
           maxWidth: '100%',
           height: 'auto',
@@ -127,7 +132,7 @@ const HakkoRyu = () => {
 
       <Box
         component='img'
-        src={image3}
+        src={jujutsuHighQualityImage}
         sx={{
           maxWidth: '100%',
           height: 'auto',
@@ -210,7 +215,7 @@ const HakkoRyu = () => {
       </Typography>
       <Box
         component='img'
-        src={image3}
+        src={shiatsuHighQualityImage}
         sx={{
           maxWidth: '100%',
           height: 'auto',
@@ -242,7 +247,7 @@ const HakkoRyu = () => {
       </Typography>
       <Box
         component='img'
-        src={image3}
+        src={goshinTaisoHighQualityImage}
         sx={{
           maxWidth: '100%',
           height: 'auto',

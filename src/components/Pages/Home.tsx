@@ -1,7 +1,7 @@
 import RomaniaText from '@components/ColoredText/RomaniaText';
 import FormattedMessage from '@components/FormattedMessage/FormattedMessage';
 import Quotes from '@components/Quotes/Quotes';
-import { Box, Typography } from '@mui/material';
+import { Box, Stack, Typography } from '@mui/material';
 
 type Quote = {
   quote: string;
@@ -81,50 +81,67 @@ const quotes: Quote[] = [
 
 const Home = () => {
   return (
-    <Box>
-      <Typography
-        color='primary'
-        variant='h2'
-        align='center'
-        data-aos='fade'
-        sx={{
-          textShadow:
-            '0 0 5px rgba(0, 0, 0, 0.5), 0 0 10px rgba(0, 0, 0, 0.5), 0 0 15px rgba(0, 0, 0, 0.5)',
-        }}
-      >
-        Hakko Denshin Ryu Ju Jutsu
-      </Typography>
-      <Typography
-        variant='h2'
-        data-aos='fade'
-        align='center'
-        sx={{
-          textShadow:
-            '0 0 5px rgba(0, 0, 0, 0.5), 0 0 10px rgba(0, 0, 0, 0.5), 0 0 15px rgba(0, 0, 0, 0.5)',
-        }}
-      >
-        Senshinkan <RomaniaText />
-      </Typography>
-      <Typography
-        variant='h4'
-        data-aos='fade'
-        align='center'
-        sx={{
-          textShadow:
-            '0 0 5px rgba(0, 0, 0, 0.5), 0 0 10px rgba(0, 0, 0, 0.5), 0 0 15px rgba(0, 0, 0, 0.5)',
-        }}
-      >
-        <FormattedMessage id='page.home.subtitle' />
-      </Typography>
+    <Stack
+      direction='column'
+      gap={8}
+      sx={{
+        height: {
+          xs: 'calc(100vh / 1.7)',
+          lg: 'calc(100vh - 700px)',
+        },
+      }}
+    >
       <Box
         sx={{
-          bottom: 70,
-          position: 'absolute',
+          flexGrow: 1,
+        }}
+      >
+        <Typography
+          color='primary'
+          variant='h2'
+          align='center'
+          data-aos='fade'
+          sx={{
+            textShadow:
+              '0 0 5px rgba(0, 0, 0, 0.5), 0 0 10px rgba(0, 0, 0, 0.5), 0 0 15px rgba(0, 0, 0, 0.5)',
+          }}
+        >
+          Hakko Denshin Ryu Ju Jutsu
+        </Typography>
+        <Typography
+          variant='h2'
+          data-aos='fade'
+          align='center'
+          sx={{
+            textShadow:
+              '0 0 5px rgba(0, 0, 0, 0.5), 0 0 10px rgba(0, 0, 0, 0.5), 0 0 15px rgba(0, 0, 0, 0.5)',
+          }}
+        >
+          Senshinkan <RomaniaText />
+        </Typography>
+        <Typography
+          variant='h4'
+          data-aos='fade'
+          align='center'
+          sx={{
+            textShadow:
+              '0 0 5px rgba(0, 0, 0, 0.5), 0 0 10px rgba(0, 0, 0, 0.5), 0 0 15px rgba(0, 0, 0, 0.5)',
+          }}
+        >
+          <FormattedMessage id='page.home.subtitle' />
+        </Typography>
+      </Box>
+      <Box
+        sx={{
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
+          position: 'relative',
         }}
       >
         <Quotes data={quotes} />
       </Box>
-    </Box>
+    </Stack>
   );
 };
 

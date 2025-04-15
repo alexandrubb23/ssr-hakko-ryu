@@ -1,7 +1,5 @@
 import { Box, Stack, Typography } from '@mui/material';
 
-import alexHighQualityImage from '@assets/images/high-res-gust-2.jpg';
-import alexLowQualityImage from '@assets/images/low-res-gust-2.jpg';
 import BlurredUpImage from '@components/Image/BlurredUpImage';
 
 import FormattedMessage from '@components/FormattedMessage/FormattedMessage';
@@ -10,6 +8,8 @@ import EmailMediaItem from './EmailMediaItem';
 import PhoneMediaItem from './PhoneMediaItem';
 import SocialMediaItem from './SocialMediaItem';
 import ScheduleMediaItem from './ScheduleMediaItem';
+import contactLowQualityImage from '@assets/images/philip-and-alex-coste-small.jpg';
+import contactHighQualityImage from '@assets/images/philip-and-alex-coste.webp';
 
 const Contact = () => {
   return (
@@ -21,8 +21,8 @@ const Contact = () => {
       }}
     >
       <BlurredUpImage
-        highQualitySrc={alexHighQualityImage}
-        lowQualitySrc={alexLowQualityImage}
+        highQualitySrc={contactHighQualityImage}
+        lowQualitySrc={contactLowQualityImage}
       />
       <Stack
         spacing={2}
