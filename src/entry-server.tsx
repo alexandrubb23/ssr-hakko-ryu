@@ -34,10 +34,6 @@ export async function render(url: string) {
     </Providers>
   );
 
-  console.log('====================================');
-  console.log({ html });
-  console.log('====================================');
-
   const emotionChunks = extractCriticalToChunks(html);
   const styles = constructStyleTagsFromChunks(emotionChunks);
   const head = `
