@@ -97,6 +97,10 @@ const HomeRGB = () => {
             display: 'flex',
             justifyContent: 'center',
             flexDirection: 'column',
+            // 1 => 8px
+            padding: {
+              lg: 5,
+            },
           }}
         >
           <Typography
@@ -132,6 +136,8 @@ const HomeRGB = () => {
             sx={{
               position: isMobile ? 'absolute' : 'relative',
               minHeight: '100vh',
+              top: 0,
+              zIndex: -1,
             }}
           />
         </Grid>

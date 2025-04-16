@@ -55,6 +55,9 @@ const Contact = () => {
         <BlurredUpImage
           lowQualitySrc={contactLowQualityImage}
           highQualitySrc={contactHighQualityImage}
+          sx={{
+            width: 'auto',
+          }}
         />
       </Grid>
     </Grid>
