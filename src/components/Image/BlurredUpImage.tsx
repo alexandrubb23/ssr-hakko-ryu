@@ -22,9 +22,6 @@ const BlurredUpImage = (sources: BlurredUpImageProps) => {
         height: '100%',
         maxHeight: '100vh',
         objectFit: 'cover',
-
-        top: 0,
-        zIndex: -1,
         objectPosition: 'center',
         transition: blur ? 'none' : 'filter 0.3s ease-out',
         ...(sources?.sx || {}),

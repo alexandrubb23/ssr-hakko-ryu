@@ -1,5 +1,8 @@
-import { Box, Grid, Typography } from '@mui/material';
+import { Grid, Typography } from '@mui/material';
 
+import BlurredUpImage from '@components/Image/BlurredUpImage';
+
+import senshinkanLowQualityImage from '@assets/images/279-small.webp';
 import senshinkanHighQualityImage from '@assets/images/279.webp';
 const Senshinkan = () => {
   return (
@@ -12,17 +15,16 @@ const Senshinkan = () => {
           justifyContent: 'center',
         }}
       >
-        <Box
-          component='img'
-          src={senshinkanHighQualityImage}
+        <BlurredUpImage
+          lowQualitySrc={senshinkanLowQualityImage}
+          highQualitySrc={senshinkanHighQualityImage}
           sx={{
             maxWidth: '100%',
-            height: 'auto',
+            width: 'auto',
             maxHeight: '100vh',
             objectFit: 'cover',
             objectPosition: 'center',
           }}
-          data-aos='fade-left'
         />
       </Grid>
       <Grid size={{ xs: 12, md: 6 }} order={{ xs: 1, md: 0 }}>

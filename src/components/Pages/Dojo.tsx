@@ -1,6 +1,8 @@
 import { Box, Grid, Typography } from '@mui/material';
 
-import dojoHighQualityImage from '@assets/images/200.webp';
+import hakkoDenshinRyuHighQualityImage from '@assets/images/200.webp';
+import hakkoDenshinRyuLowQualityImage from '@assets/images/200-small.webp';
+import BlurredUpImage from '@components/Image/BlurredUpImage';
 
 const Dojo = () => {
   return (
@@ -53,17 +55,9 @@ const Dojo = () => {
 
       {/* Image on the right */}
       <Grid size={{ xs: 12, md: 6 }}>
-        <Box
-          component='img'
-          src={dojoHighQualityImage}
-          sx={{
-            maxWidth: '100%',
-            height: 'auto',
-            maxHeight: '100vh',
-            objectFit: 'cover',
-            objectPosition: 'center',
-          }}
-          data-aos='fade-left'
+        <BlurredUpImage
+          lowQualitySrc={hakkoDenshinRyuLowQualityImage}
+          highQualitySrc={hakkoDenshinRyuHighQualityImage}
         />
       </Grid>
     </Grid>

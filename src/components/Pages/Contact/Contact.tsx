@@ -1,12 +1,15 @@
 import { Box, Grid, Stack, Typography } from '@mui/material';
 
 import contactHighQualityImage from '@assets/images/254.webp';
+import contactLowQualityImage from '@assets/images/254-small.webp';
+
 import FormattedMessage from '@components/FormattedMessage/FormattedMessage';
 import AddressMediaItem from './AddressMediaItem';
 import EmailMediaItem from './EmailMediaItem';
 import PhoneMediaItem from './PhoneMediaItem';
 import ScheduleMediaItem from './ScheduleMediaItem';
 import SocialMediaItem from './SocialMediaItem';
+import BlurredUpImage from '@components/Image/BlurredUpImage';
 
 const Contact = () => {
   return (
@@ -49,17 +52,9 @@ const Contact = () => {
 
       {/* Image on the right */}
       <Grid size={{ xs: 12, md: 6 }}>
-        <Box
-          component='img'
-          src={contactHighQualityImage}
-          sx={{
-            maxWidth: '100%',
-            height: 'auto',
-            maxHeight: '100vh',
-            objectFit: 'cover',
-            objectPosition: 'center',
-          }}
-          data-aos='fade-left'
+        <BlurredUpImage
+          lowQualitySrc={contactLowQualityImage}
+          highQualitySrc={contactHighQualityImage}
         />
       </Grid>
     </Grid>

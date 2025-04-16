@@ -1,11 +1,18 @@
 import { Box, Grid, Typography } from '@mui/material';
 
+import BlurredUpImage from '@components/Image/BlurredUpImage';
+
 import hakkoRyuHighQualityImage from '@assets/images/53.webp';
+import hakkoRyuLowQualityImage from '@assets/images/53-small.webp';
 
 import hakkoDenshinRyuHighQualityImage from '@assets/images/200.webp';
+import hakkoDenshinRyuLowQualityImage from '@assets/images/200-small.webp';
 
 import shiatsuHighQualityImage from '@assets/images/21.webp';
+import shiatsuLowQualityImage from '@assets/images/21-small.webp';
+
 import goshinTaisoHighQualityImage from '@assets/images/89.webp';
+import goshinTaisoLowQualityImage from '@assets/images/89-small.webp';
 
 const HakkoRyuRGB = () => {
   return (
@@ -61,18 +68,9 @@ const HakkoRyuRGB = () => {
 
         {/* Image on the right */}
         <Grid size={{ xs: 12, md: 6 }}>
-          <Box
-            component='img'
-            src={hakkoRyuHighQualityImage}
-            sx={{
-              maxWidth: '100%',
-              height: 'auto',
-              maxHeight: '100vh',
-              objectFit: 'cover',
-              objectPosition: 'center',
-              aspectRatio: '16/9',
-            }}
-            data-aos='fade-left'
+          <BlurredUpImage
+            lowQualitySrc={hakkoRyuLowQualityImage}
+            highQualitySrc={hakkoRyuHighQualityImage}
           />
         </Grid>
       </Grid>
@@ -83,18 +81,9 @@ const HakkoRyuRGB = () => {
       <Grid container spacing={2} alignItems='center'>
         {/* Image on the left */}
         <Grid size={{ xs: 12, md: 6 }} order={{ xs: 1, md: 0 }}>
-          <Box
-            component='img'
-            src={hakkoDenshinRyuHighQualityImage}
-            sx={{
-              maxWidth: '100%',
-              height: 'auto',
-              maxHeight: '100vh',
-              objectFit: 'cover',
-              objectPosition: 'center',
-              aspectRatio: '16/9',
-            }}
-            data-aos='fade-right'
+          <BlurredUpImage
+            lowQualitySrc={hakkoDenshinRyuLowQualityImage}
+            highQualitySrc={hakkoDenshinRyuHighQualityImage}
           />
         </Grid>
 
@@ -201,18 +190,9 @@ const HakkoRyuRGB = () => {
 
         {/* Image on the right */}
         <Grid size={{ xs: 12, md: 6 }}>
-          <Box
-            component='img'
-            src={shiatsuHighQualityImage}
-            sx={{
-              maxWidth: '100%',
-              height: 'auto',
-              maxHeight: '100vh',
-              objectFit: 'cover',
-              objectPosition: 'center',
-              aspectRatio: '16/9',
-            }}
-            data-aos='fade-left'
+          <BlurredUpImage
+            lowQualitySrc={shiatsuLowQualityImage}
+            highQualitySrc={shiatsuHighQualityImage}
           />
         </Grid>
       </Grid>
@@ -221,18 +201,9 @@ const HakkoRyuRGB = () => {
       <Grid container spacing={2} alignItems='center'>
         {/* Image on the left */}
         <Grid size={{ xs: 12, md: 6 }} order={{ xs: 1, md: 0 }}>
-          <Box
-            component='img'
-            src={goshinTaisoHighQualityImage}
-            sx={{
-              maxWidth: '100%',
-              height: 'auto',
-              maxHeight: '100vh',
-              objectFit: 'cover',
-              objectPosition: 'center',
-              aspectRatio: '16/9',
-            }}
-            data-aos='fade-right'
+          <BlurredUpImage
+            lowQualitySrc={goshinTaisoLowQualityImage}
+            highQualitySrc={goshinTaisoHighQualityImage}
           />
         </Grid>
 
