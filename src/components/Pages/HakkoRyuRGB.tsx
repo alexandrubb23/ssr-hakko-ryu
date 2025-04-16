@@ -1,15 +1,11 @@
 import { Box, Grid, Typography } from '@mui/material';
 
-import BlurredUpImage from '../Image/BlurredUpImage';
+import hakkoRyuHighQualityImage from '@assets/images/53.webp';
 
-import hakkoRyuLowQualityImage from '@assets/images/alex-and-philip-shiho-nage-small.jpg';
-import hakkoRyuHighQualityImage from '@assets/images/--53.jpg';
+import hakkoDenshinRyuHighQualityImage from '@assets/images/200.webp';
 
-import hakkoDenshinRyuHighQualityImage from '@assets/images/--200.jpg';
-
-import jujutsuHighQualityImage from '@assets/images/alex-and-coste-waki-gatame.webp';
-import shiatsuHighQualityImage from '@assets/images/--21.jpg';
-import goshinTaisoHighQualityImage from '@assets/images/--89.jpg';
+import shiatsuHighQualityImage from '@assets/images/21.webp';
+import goshinTaisoHighQualityImage from '@assets/images/89.webp';
 
 const HakkoRyuRGB = () => {
   return (

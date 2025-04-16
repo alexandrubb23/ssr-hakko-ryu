@@ -1,8 +1,6 @@
 import { Box, Grid, Typography } from '@mui/material';
 
-import BlurredUpImage from '../Image/BlurredUpImage';
-import dojoLowQualityImage from '@assets/images/dojo-kids-small.jpg';
-import dojoHighQualityImage from '@assets/images/--200.jpg';
+import dojoHighQualityImage from '@assets/images/200.webp';
 
 const Dojo = () => {
   return (

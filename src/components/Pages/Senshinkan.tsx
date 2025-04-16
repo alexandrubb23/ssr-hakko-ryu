@@ -1,6 +1,6 @@
 import { Box, Grid, Typography } from '@mui/material';
 
-import senshinkanHighQualityImage from '@assets/images/--279.jpg';
+import senshinkanHighQualityImage from '@assets/images/279.webp';
 const Senshinkan = () => {
   return (
     <Grid container spacing={2} alignItems='center'>

@@ -77,11 +77,11 @@ const quotes: Quote[] = [
   },
 ];
 
-import desktopHighQualityImage from '@assets/images/--108.jpg';
-import desktopLowQualityImage from '@assets/images/--108-small.jpg';
+import desktopHighQualityImage from '@assets/images/108.webp';
+import desktopLowQualityImage from '@assets/images/108-small.jpg';
 
-import mobileHighQuality from '@assets/images/--180.jpg';
-import mobileLowQuality from '@assets/images/--180-small.jpg';
+import mobileHighQuality from '@assets/images/180.webp';
+import mobileLowQuality from '@assets/images/180-small.jpg';
 import BlurredUpImage from '@components/Image/BlurredUpImage';
 import useIsMobile from '@hooks/isMobile';
 

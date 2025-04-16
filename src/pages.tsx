@@ -3,11 +3,9 @@ import React from 'react';
 import Contact from '@components/Pages/Contact/Contact';
 import Dojo from '@components/Pages/Dojo';
 import Senshinkan from '@components/Pages/Senshinkan';
-import HakkoRyu from './components/Pages/HakkoRyu';
 
-import homeBgImage from '@assets/images/--107.jpg';
-import HomeRGB from '@components/Pages/HomeRGB';
 import HakkoRyuRGB from '@components/Pages/HakkoRyuRGB';
+import HomeRGB from '@components/Pages/HomeRGB';
 
 export type PagePath = 'home' | 'hakko-ryu' | 'senshinkan' | 'dojo' | 'contact';
 
@@ -21,7 +19,6 @@ export interface Page {
 
 export const pages: Page[] = [
   {
-    // bgImage: homeBgImage,
     component: HomeRGB,
     path: 'home',
     title: 'Home Page',
