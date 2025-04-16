@@ -1,19 +1,12 @@
 import { Box } from '@mui/material';
-import { Outlet } from 'react-router';
+import { Outlet, useLocation } from 'react-router';
 const Content = () => {
+  const location = useLocation();
   return (
     <Box
-      id='main'
-      // sx={{
-      //   margin: '0 auto',
-      //   maxWidth: {
-      //     xl: '1000px',
-      //     lg: '900px',
-      //     md: '800px',
-      //     sm: '100%',
-      //     xs: '100%',
-      //   },
-      // }}
+      sx={{
+        padding: location.pathname === '/' ? 0 : 2,
+      }}
     >
       <Outlet />
     </Box>

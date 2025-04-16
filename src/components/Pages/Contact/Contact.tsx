@@ -56,7 +56,7 @@ const Contact = () => {
           lowQualitySrc={contactLowQualityImage}
           highQualitySrc={contactHighQualityImage}
           sx={{
-            width: 'auto',
+            width: '100%',
           }}
         />
       </Grid>

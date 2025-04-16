@@ -83,12 +83,15 @@ const theme = createTheme({
         }
         h1 {
           font-size: clamp(2rem, calc(3vw + 1rem), 3rem) !important;
+          padding: 16px;
         }
         h2 {
           font-size: clamp(1rem, calc(3vw + 1rem), 2rem) !important;
+           padding: 16px;
         }
         h3 {
           font-size: clamp(2rem, calc(7vw + 1rem), 2.375rem) !important;
+          padding: 16px;
         }      
       `,
     },

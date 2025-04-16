@@ -4,7 +4,13 @@ import { Link } from 'react-router';
 import LogoIcon from '@assets/images/logo.png';
 
 const Logo = () => (
-  <Box className='logo-box'>
+  <Box
+    className='logo-box'
+    sx={{
+      padding: 2,
+      textAlign: 'center',
+    }}
+  >
     <Link to='/'>
       <Box component='img' src={LogoIcon} height={50} />
       <Typography
@@ -12,6 +18,7 @@ const Logo = () => (
         sx={{
           fontWeight: 'bold',
           fontSize: '1rem !important',
+          padding: 0,
         }}
       >
         Senshinkan

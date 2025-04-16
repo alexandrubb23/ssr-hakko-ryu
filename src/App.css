@@ -10,21 +10,6 @@ a:hover {
   justify-content: space-between;
 }
 
-#root {
-  padding: min(1em, 8%);
-}
-
-#main {
-  align-items: center;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-.logo-box {
-  text-align: center;
-}
-
 blockquote {
   margin: 10px auto;
   padding: 15px;
