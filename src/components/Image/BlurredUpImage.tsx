@@ -18,11 +18,13 @@ const BlurredUpImage = (sources: BlurredUpImageProps) => {
       src={src}
       sx={{
         width: '100%',
-        aspectRatio: '16/9',
-        filter: blur ? 'blur(20px)' : 'none',
-        height: 'auto',
+        filter: blur ? 'blur(10px)' : 'none',
+        height: '100%',
         maxHeight: '100vh',
         objectFit: 'cover',
+
+        top: 0,
+        zIndex: -1,
         objectPosition: 'center',
         transition: blur ? 'none' : 'filter 0.3s ease-out',
         ...(sources?.sx || {}),

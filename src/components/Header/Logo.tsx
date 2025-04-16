@@ -11,7 +11,7 @@ const Logo = () => (
         variant='h1'
         sx={{
           fontWeight: 'bold',
-          fontSize: '1rem',
+          fontSize: '1rem !important',
         }}
       >
         Senshinkan

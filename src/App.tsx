@@ -19,7 +19,7 @@ const BoxStyled = styled(Box, {
   ({ bgImage, blur, theme }) =>
     bgImage && {
       position: 'relative',
-      minHeight: 'calc(100vh  - 218px)',
+      // minHeight: 'calc(100vh  - 318px)',
       overflow: 'hidden',
       '&::before': {
         content: '""',

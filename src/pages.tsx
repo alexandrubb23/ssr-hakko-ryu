@@ -2,11 +2,12 @@ import React from 'react';
 
 import Contact from '@components/Pages/Contact/Contact';
 import Dojo from '@components/Pages/Dojo';
-import Home from '@components/Pages/Home';
 import Senshinkan from '@components/Pages/Senshinkan';
 import HakkoRyu from './components/Pages/HakkoRyu';
 
-import homeBgImage from '@assets/images/home-alex-and-alex-conste.webp';
+import homeBgImage from '@assets/images/--107.jpg';
+import HomeRGB from '@components/Pages/HomeRGB';
+import HakkoRyuRGB from '@components/Pages/HakkoRyuRGB';
 
 export type PagePath = 'home' | 'hakko-ryu' | 'senshinkan' | 'dojo' | 'contact';
 
@@ -20,13 +21,13 @@ export interface Page {
 
 export const pages: Page[] = [
   {
-    bgImage: homeBgImage,
-    component: Home,
+    // bgImage: homeBgImage,
+    component: HomeRGB,
     path: 'home',
     title: 'Home Page',
   },
   {
-    component: HakkoRyu,
+    component: HakkoRyuRGB,
     path: 'hakko-ryu',
     title: 'Hakko Ryu Page',
   },
