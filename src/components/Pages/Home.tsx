@@ -77,8 +77,8 @@ const quotes: Quote[] = [
   },
 ];
 
-import desktopLowQualityImage from '@assets/images/108-small.jpg';
-import desktopHighQualityImage from '@assets/images/108.webp';
+import desktopLowQuality from '@assets/images/108-small.jpg';
+import desktopHighQuality from '@assets/images/108.webp';
 
 import mobileLowQuality from '@assets/images/180-small.jpg';
 import mobileHighQuality from '@assets/images/180.webp';
@@ -89,10 +89,13 @@ import Quotes from '@components/Quotes/Quotes';
 
 const Home = () => {
   const isMobile = useIsMobile();
-  const { imageLowQuality, imageHighQuality } = useDeviceImageType(
-    isMobile ? mobileLowQuality : desktopLowQualityImage,
-    isMobile ? mobileHighQuality : desktopHighQualityImage
-  );
+
+  const { imageLowQuality, imageHighQuality } = useDeviceImageType({
+    mobileLowQuality,
+    desktopLowQuality,
+    mobileHighQuality,
+    desktopHighQuality,
+  });
 
   return (
     <Box sx={{ flexGrow: 1 }}>

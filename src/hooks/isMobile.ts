@@ -1,8 +1,8 @@
-import { useMediaQuery, useTheme } from '@mui/material';
+import { useMediaQuery, UseMediaQueryOptions, useTheme } from '@mui/material';
 
-const useIsMobile = () => {
+const useIsMobile = (options?: UseMediaQueryOptions) => {
   const theme = useTheme();
-  return useMediaQuery(theme.breakpoints.down('sm'));
+  return useMediaQuery(theme.breakpoints.down('sm'), { ...options });
 };
 
 export default useIsMobile;

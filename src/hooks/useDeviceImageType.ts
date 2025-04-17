@@ -1,15 +1,27 @@
 import { useEffect, useState } from 'react';
 import useIsMobile from './isMobile';
 
-const useDeviceImageType = (lowQuality: string, highQuality: string) => {
-  const isMobile = useIsMobile();
+type ImageSet = {
+  mobileLowQuality: string;
+  desktopLowQuality: string;
+  mobileHighQuality: string;
+  desktopHighQuality: string;
+};
 
-  const [imageLowQuality, setImageLowQuality] = useState(() => lowQuality);
-  const [imageHighQuality, setImageHighQuality] = useState(() => highQuality);
+const useDeviceImageType = ({
+  mobileLowQuality,
+  desktopLowQuality,
+  mobileHighQuality,
+  desktopHighQuality,
+}: ImageSet) => {
+  const isMobile = useIsMobile({ noSsr: true });
+
+  const [imageLowQuality, setImageLowQuality] = useState('');
+  const [imageHighQuality, setImageHighQuality] = useState('');
 
   useEffect(() => {
-    setImageLowQuality(lowQuality);
-    setImageHighQuality(highQuality);
+    setImageLowQuality(isMobile ? mobileLowQuality : desktopLowQuality);
+    setImageHighQuality(isMobile ? mobileHighQuality : desktopHighQuality);
   }, [isMobile]);
 
   return { imageLowQuality, imageHighQuality };
