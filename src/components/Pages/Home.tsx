@@ -1,7 +1,5 @@
-import RomaniaText from '@components/ColoredText/RomaniaText';
 import FormattedMessage from '@components/FormattedMessage/FormattedMessage';
-import Quotes from '@components/Quotes/Quotes';
-import { Box, Stack, Typography } from '@mui/material';
+import { Box, Grid, Typography } from '@mui/material';
 
 type Quote = {
   quote: string;
@@ -79,71 +77,75 @@ const quotes: Quote[] = [
   },
 ];
 
+import desktopLowQualityImage from '@assets/images/108-small.jpg';
+import desktopHighQualityImage from '@assets/images/108.webp';
+
+import mobileLowQuality from '@assets/images/180-small.jpg';
+import mobileHighQuality from '@assets/images/180.webp';
+import BlurredUpImage from '@components/Image/BlurredUpImage';
+import useIsMobile from '@hooks/isMobile';
+import useDeviceImageType from '@hooks/useDeviceImageType';
+
 const Home = () => {
+  const isMobile = useIsMobile();
+  const { imageLowQuality, imageHighQuality } = useDeviceImageType(
+    isMobile ? mobileLowQuality : desktopLowQualityImage,
+    isMobile ? mobileHighQuality : desktopHighQualityImage
+  );
+
   return (
-    <Stack
-      direction='column'
-      sx={{
-        height: {
-          xs: 'calc(100vh / 1.7)',
-          lg: 'calc(100vh - 700px)',
-        },
-      }}
-    >
-      <Box
-        sx={{
-          flexGrow: 1,
-          display: 'flex',
-          gap: 2,
-          flexDirection: 'column',
-        }}
-      >
-        <Typography
-          color='primary'
-          variant='h2'
-          align='center'
-          data-aos='fade'
+    <Box sx={{ flexGrow: 1 }}>
+      <Grid container spacing={2}>
+        <Grid
+          size={{ xs: 12, md: 4 }}
           sx={{
-            textShadow:
-              '0 0 5px rgba(0, 0, 0, 0.5), 0 0 10px rgba(0, 0, 0, 0.5), 0 0 15px rgba(0, 0, 0, 0.5)',
+            display: 'flex',
+            justifyContent: 'center',
+            flexDirection: 'column',
+            // 1 => 8px
+            padding: {
+              lg: 5,
+            },
           }}
         >
-          Hakko Denshin Ryu Ju Jutsu
-        </Typography>
-        <Typography
-          variant='h2'
-          data-aos='fade'
-          align='center'
-          sx={{
-            textShadow:
-              '0 0 5px rgba(0, 0, 0, 0.5), 0 0 10px rgba(0, 0, 0, 0.5), 0 0 15px rgba(0, 0, 0, 0.5)',
-          }}
-        >
-          Senshinkan <RomaniaText />
-        </Typography>
-        <Typography
-          variant='h4'
-          data-aos='fade'
-          align='center'
-          sx={{
-            textShadow:
-              '0 0 5px rgba(0, 0, 0, 0.5), 0 0 10px rgba(0, 0, 0, 0.5), 0 0 15px rgba(0, 0, 0, 0.5)',
-          }}
-        >
-          <FormattedMessage id='page.home.subtitle' />
-        </Typography>
-      </Box>
-      <Box
-        sx={{
-          display: 'flex',
-          flexDirection: 'column',
-          alignItems: 'center',
-          position: 'relative',
-        }}
-      >
-        <Quotes data={quotes} />
-      </Box>
-    </Stack>
+          <Typography
+            variant='h1'
+            align='left'
+            data-aos='fade'
+            sx={{
+              textShadow:
+                '0 0 5px rgba(0, 0, 0, 0.5), 0 0 10px rgba(0, 0, 0, 0.5), 0 0 15px rgba(0, 0, 0, 0.5)',
+            }}
+          >
+            Hakko Denshin Ryu Ju Jutsu Senshinkan Romania
+          </Typography>
+
+          <Typography
+            variant='h2'
+            data-aos='fade'
+            align='left'
+            sx={{
+              textShadow:
+                '0 0 5px rgba(0, 0, 0, 0.5), 0 0 10px rgba(0, 0, 0, 0.5), 0 0 15px rgba(0, 0, 0, 0.5)',
+            }}
+          >
+            <FormattedMessage id='page.home.subtitle' />
+          </Typography>
+        </Grid>
+        <Grid size={{ xs: 12, md: 8 }}>
+          <BlurredUpImage
+            highQualitySrc={imageHighQuality}
+            lowQualitySrc={imageLowQuality}
+            sx={{
+              position: isMobile ? 'absolute' : 'relative',
+              minHeight: '100vh',
+              top: 0,
+              zIndex: -1,
+            }}
+          />
+        </Grid>
+      </Grid>
+    </Box>
   );
 };
 

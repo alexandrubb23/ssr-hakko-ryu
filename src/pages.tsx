@@ -5,7 +5,7 @@ import Dojo from '@components/Pages/Dojo';
 import Senshinkan from '@components/Pages/Senshinkan';
 
 import HakkoRyuRGB from '@components/Pages/HakkoRyuRGB';
-import HomeRGB from '@components/Pages/HomeRGB';
+import Home from '@components/Pages/Home';
 
 export type PagePath = 'home' | 'hakko-ryu' | 'senshinkan' | 'dojo' | 'contact';
 
@@ -19,7 +19,7 @@ export interface Page {
 
 export const pages: Page[] = [
   {
-    component: HomeRGB,
+    component: Home,
     path: 'home',
     title: 'Home Page',
   },

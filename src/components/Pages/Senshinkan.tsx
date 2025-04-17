@@ -28,16 +28,11 @@ const Senshinkan = () => {
           }}
         />
       </Grid>
-      <Grid size={{ xs: 12, md: 6 }} order={{ xs: 1, md: 0 }}>
-        <Typography color='primary' variant='h4' gutterBottom>
+      <Grid size={{ xs: 12, md: 6 }}>
+        <Typography color='primary' variant='h1' gutterBottom>
           Senshinkan Romania (洗心館)
         </Typography>
-        <Typography
-          variant='body1'
-          color='text.primary'
-          align='left'
-          data-aos='fade'
-        >
+        <Typography variant='body1' align='left' data-aos='fade'>
           Master Okuyama Ryuho (奥山龍峰) was born in 1901 and died in 1987. In
           addition to traditional Japanese medicine and oratorical science, he
           studied several Ju-Jutsu and weapon Ryuha (流派: schools/styles),
