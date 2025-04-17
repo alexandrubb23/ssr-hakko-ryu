@@ -96,13 +96,7 @@ const Home = () => {
 
   return (
     <Box sx={{ flexGrow: 1 }}>
-      <Grid
-        container
-        spacing={2}
-        sx={{
-          height: '100vh',
-        }}
-      >
+      <Grid container spacing={2}>
         <Grid
           size={{ xs: 12, md: 4 }}
           sx={{
