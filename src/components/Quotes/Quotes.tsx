@@ -46,24 +46,20 @@ const Quotes = ({ data }: Props) => {
           transition={{ duration: 0.5 }}
         >
           <>
-            <blockquote cite='https://www.huxley.net/bnw/four.html'>
-              <Typography
-                variant='body2'
-                sx={{
-                  fontSize: 'clamp(1rem, 2vw, 1.5rem)',
-                  textShadow:
-                    '0 0 5px rgba(0, 0, 0, 0.5), 0 0 10px rgba(0, 0, 0, 0.5), 0 0 15px rgba(0, 0, 0, 0.5)',
-                }}
-              >
-                {quote}
-              </Typography>
-            </blockquote>
             <Typography
               variant='body2'
               sx={{
                 fontSize: 'clamp(1rem, 2vw, 1.5rem)',
-                textShadow:
-                  '0 0 5px rgba(0, 0, 0, 0.5), 0 0 10px rgba(0, 0, 0, 0.5), 0 0 15px rgba(0, 0, 0, 0.5)',
+                fontStyle: 'italic',
+              }}
+            >
+              {quote}
+            </Typography>
+            <Typography
+              variant='body2'
+              align='right'
+              sx={{
+                fontSize: 'clamp(1rem, 2vw, 1.5rem)',
               }}
             >
               —{author},
