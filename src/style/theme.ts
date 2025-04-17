@@ -31,6 +31,15 @@ const theme = createTheme({
   },
   typography: {
     fontFamily: 'Jarene, Arial, sans-serif',
+    hakkoSubtitle: {
+      fontFamily: 'Inter',
+      fontSize: 'clamp(1rem, calc(2vw + 1rem), 3rem)',
+      fontWeight: 400,
+      lineHeight: 1.2,
+      padding: 16,
+      paddingBottom: 0,
+      paddingTop: 0,
+    },
     h1: {
       padding: 16,
       fontSize: 'clamp(2rem, calc(3vw + 1rem), 3rem)',
@@ -45,6 +54,7 @@ const theme = createTheme({
     },
     subtitle1: {
       padding: 16,
+      lineHeight: 1.2,
       fontSize: 'clamp(1rem, calc(2vw + 1rem), 3rem)',
     },
     body1: {
@@ -55,6 +65,13 @@ const theme = createTheme({
     },
   },
   components: {
+    MuiTypography: {
+      defaultProps: {
+        variantMapping: {
+          hakkoSubtitle: 'h2',
+        },
+      },
+    },
     MuiCssBaseline: {
       styleOverrides: `
         :root {

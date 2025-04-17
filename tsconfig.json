@@ -33,6 +33,6 @@
       "@store/*": ["store/*"]
     }
   },
-  "include": ["src"],
+  "include": ["src", "mui.d.ts"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }

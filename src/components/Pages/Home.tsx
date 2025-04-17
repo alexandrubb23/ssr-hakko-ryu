@@ -107,9 +107,8 @@ const Home = () => {
           size={{ xs: 12, md: 4 }}
           sx={{
             display: 'flex',
-            justifyContent: 'center',
             flexDirection: 'column',
-            // 1 => 8px
+            justifyContent: 'center',
             padding: {
               lg: 5,
             },
@@ -120,23 +119,13 @@ const Home = () => {
             align='left'
             data-aos='fade'
             sx={{
-              textShadow:
-                '0 0 5px rgba(0, 0, 0, 0.5), 0 0 10px rgba(0, 0, 0, 0.5), 0 0 15px rgba(0, 0, 0, 0.5)',
+              paddingBottom: 0,
             }}
           >
             Hakko Denshin Ryu Ju Jutsu Senshinkan Romania
           </Typography>
 
-          <Typography
-            variant='subtitle1'
-            data-aos='fade'
-            align='left'
-            sx={{
-              fontFamily: 'Inter',
-              textShadow:
-                '0 0 5px rgba(0, 0, 0, 0.5), 0 0 10px rgba(0, 0, 0, 0.5), 0 0 15px rgba(0, 0, 0, 0.5)',
-            }}
-          >
+          <Typography variant='hakkoSubtitle' data-aos='fade' align='left'>
             <FormattedMessage id='page.home.subtitle' />
           </Typography>
           <Quotes data={quotes} />
