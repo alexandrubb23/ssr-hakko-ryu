@@ -75,9 +75,9 @@ const theme = createTheme({
     MuiCssBaseline: {
       styleOverrides: `
         :root {
-          --bar-width: 20px;
-          --bar-height: 2px;
-          --hamburger-gap: 4px;
+          --bar-width: 24px;
+          --bar-height: 3px;
+          --hamburger-gap: 3px;
           --foreground-color: #fff;
           --background-color: #000;
           --hamburger-margin: 18px;
