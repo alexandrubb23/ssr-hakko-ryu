@@ -35,9 +35,12 @@ const App = () => {
     });
   }, []);
 
+  if (!hydrated) {
+    return <CenterSpinner />;
+  }
+
   return (
     <Box>
-      {!hydrated && <CenterSpinner />}
       <StackStyled hydrated={hydrated}>
         <Header />
         <Content />
