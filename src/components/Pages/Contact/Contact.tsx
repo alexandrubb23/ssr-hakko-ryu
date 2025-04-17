@@ -29,7 +29,7 @@ const Contact = () => {
               },
             }}
           >
-            <Typography variant='h4'>
+            <Typography variant='h1'>
               <FormattedMessage id='page.contact.title' />
             </Typography>
             <Typography variant='body1'>

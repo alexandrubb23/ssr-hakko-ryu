@@ -46,7 +46,7 @@ const ListPages = ({ sx, onPageChange }: Props) => {
           return (
             <ListItemStyle key={page.path} sx={sx?.item}>
               <Typography
-                variant='h5'
+                variant='body1'
                 sx={{
                   textAlign: 'center',
                   a: {

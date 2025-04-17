@@ -32,7 +32,7 @@ const Quotes = ({ data }: Props) => {
   return (
     <Box
       sx={{
-        minHeight: '3rem',
+        minHeight: 250,
         overflow: 'hidden',
         padding: 2,
       }}

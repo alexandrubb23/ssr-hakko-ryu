@@ -30,14 +30,28 @@ const theme = createTheme({
     },
   },
   typography: {
+    fontFamily: 'Jarene, Arial, sans-serif',
     h1: {
-      fontFamily: 'Jarene, Arial, sans-serif',
+      padding: 16,
+      fontSize: 'clamp(2rem, calc(3vw + 1rem), 3rem)',
     },
     h2: {
-      fontFamily: 'Inter, Arial, sans-serif',
+      padding: 16,
+      fontSize: 'clamp(2rem, calc(3vw + 1rem), 3rem)',
+    },
+    h3: {
+      padding: 16,
+      fontSize: 'clamp(2rem, calc(7vw + 1rem), 2.375rem)',
+    },
+    subtitle1: {
+      padding: 16,
+      fontSize: 'clamp(1rem, calc(2vw + 1rem), 3rem)',
     },
     body1: {
-      fontFamily: 'Rubik',
+      fontFamily: 'Inter',
+    },
+    body2: {
+      fontFamily: 'Inter',
     },
   },
   components: {
@@ -80,19 +94,7 @@ const theme = createTheme({
           background-position: center;
           color: #e7e7e7;
           font-size: clamp(12px, 3vw, 24px);
-        }
-        h1 {
-          font-size: clamp(2rem, calc(3vw + 1rem), 3rem) !important;
-          padding: 16px;
-        }
-        h2 {
-          font-size: clamp(1rem, calc(3vw + 1rem), 2rem) !important;
-           padding: 16px;
-        }
-        h3 {
-          font-size: clamp(2rem, calc(7vw + 1rem), 2.375rem) !important;
-          padding: 16px;
-        }      
+        }   
       `,
     },
   },

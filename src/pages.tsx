@@ -4,7 +4,7 @@ import Contact from '@components/Pages/Contact/Contact';
 import Dojo from '@components/Pages/Dojo';
 import Senshinkan from '@components/Pages/Senshinkan';
 
-import HakkoRyuRGB from '@components/Pages/HakkoRyuRGB';
+import HakkoRyuRGB from '@components/Pages/HakkoRyu';
 import Home from '@components/Pages/Home';
 
 export type PagePath = 'home' | 'hakko-ryu' | 'senshinkan' | 'dojo' | 'contact';

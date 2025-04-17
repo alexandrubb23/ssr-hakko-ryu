@@ -85,6 +85,7 @@ import mobileHighQuality from '@assets/images/180.webp';
 import BlurredUpImage from '@components/Image/BlurredUpImage';
 import useIsMobile from '@hooks/isMobile';
 import useDeviceImageType from '@hooks/useDeviceImageType';
+import Quotes from '@components/Quotes/Quotes';
 
 const Home = () => {
   const isMobile = useIsMobile();
@@ -95,7 +96,13 @@ const Home = () => {
 
   return (
     <Box sx={{ flexGrow: 1 }}>
-      <Grid container spacing={2}>
+      <Grid
+        container
+        spacing={2}
+        sx={{
+          height: '100vh',
+        }}
+      >
         <Grid
           size={{ xs: 12, md: 4 }}
           sx={{
@@ -121,16 +128,18 @@ const Home = () => {
           </Typography>
 
           <Typography
-            variant='h2'
+            variant='subtitle1'
             data-aos='fade'
             align='left'
             sx={{
+              fontFamily: 'Inter',
               textShadow:
                 '0 0 5px rgba(0, 0, 0, 0.5), 0 0 10px rgba(0, 0, 0, 0.5), 0 0 15px rgba(0, 0, 0, 0.5)',
             }}
           >
             <FormattedMessage id='page.home.subtitle' />
           </Typography>
+          <Quotes data={quotes} />
         </Grid>
         <Grid size={{ xs: 12, md: 8 }}>
           <BlurredUpImage

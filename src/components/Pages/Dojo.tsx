@@ -9,7 +9,7 @@ const Dojo = () => {
     <Grid container spacing={2} alignItems='center'>
       {/* Text on the left */}
       <Grid size={{ xs: 12, md: 6 }} order={{ xs: 1, md: 0 }}>
-        <Typography color='primary' variant='h4' gutterBottom>
+        <Typography color='primary' variant='h1' gutterBottom>
           Senshinkan Romania (洗心館)
         </Typography>
         <Typography
