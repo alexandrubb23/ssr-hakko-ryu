@@ -121,7 +121,7 @@ const Home = () => {
         <BlurredUpImage
           highQualitySrc={imageHighQuality}
           lowQualitySrc={imageLowQuality}
-          className={`min-h-dvh top-0 z-[-1] left-0 ${
+          className={`min-h-dvh top-0 z-[-2] left-0 ${
             isMobile ? 'absolute' : 'relative'
           }`}
         />

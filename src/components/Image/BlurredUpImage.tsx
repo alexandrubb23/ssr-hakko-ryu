@@ -9,6 +9,7 @@ type BlurredUpImageProps = UseProgressiveImg & {
   // TODO: Remove sx
   sx?: SxThemeProps;
   className?: string;
+  animate?: string;
 };
 
 const BoxStyled = styled(Box, {
@@ -25,21 +26,23 @@ const BoxStyled = styled(Box, {
   })
 );
 
-const BlurredUpImage = (sources: BlurredUpImageProps) => {
-  const [src, { blur }] = useProgressiveImg(sources);
+const BlurredUpImage = (props: BlurredUpImageProps) => {
+  const [src, { blur }] = useProgressiveImg(props);
 
   if (!src) return null;
 
   return (
-    <BoxStyled
-      blur={blur}
-      component='img'
-      src={src}
-      className={sources.className}
-      sx={{
-        ...(sources.sx || {}),
-      }}
-    />
+    <Box data-aos={props.animate}>
+      <BoxStyled
+        blur={blur}
+        component='img'
+        src={src}
+        className={props.className}
+        sx={{
+          ...(props.sx || {}),
+        }}
+      />
+    </Box>
   );
 };
 

@@ -80,6 +80,7 @@ const HakkoRyu = () => {
         {/* Image on the left */}
         <Grid size={{ xs: 12, md: 6 }} order={{ xs: 1, md: 0 }}>
           <BlurredUpImage
+            animate='fade'
             lowQualitySrc={hakkoDenshinRyuLowQualityImage}
             highQualitySrc={hakkoDenshinRyuHighQualityImage}
           />
@@ -189,6 +190,7 @@ const HakkoRyu = () => {
         {/* Image on the right */}
         <Grid size={{ xs: 12, md: 6 }}>
           <BlurredUpImage
+            animate='fade'
             lowQualitySrc={shiatsuLowQualityImage}
             highQualitySrc={shiatsuHighQualityImage}
           />
@@ -200,6 +202,7 @@ const HakkoRyu = () => {
         {/* Image on the left */}
         <Grid size={{ xs: 12, md: 6 }} order={{ xs: 1, md: 0 }}>
           <BlurredUpImage
+            animate='fade'
             lowQualitySrc={goshinTaisoLowQualityImage}
             highQualitySrc={goshinTaisoHighQualityImage}
           />
