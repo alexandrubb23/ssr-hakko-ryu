@@ -47,7 +47,7 @@ const HakkoRyu = () => {
             variant='body1'
             color='text.primary'
             align='left'
-            data-aos='fade-left'
+            data-aos='fade'
           >
             In 1941, he presented his own method, making a synthesis between the
             Japanese martial tradition and the needs of our time. He became thus
@@ -58,7 +58,7 @@ const HakkoRyu = () => {
             variant='body1'
             color='text.primary'
             align='left'
-            data-aos='fade-left'
+            data-aos='fade'
           >
             The meaning of this school's name is that true efficiency is
             invisible to the eyes as are the ultra-violet rays (eighth colour on
@@ -92,7 +92,7 @@ const HakkoRyu = () => {
             color='primary'
             variant='h2'
             gutterBottom
-            data-aos='fade-left'
+            data-aos='fade'
           >
             Ju Jutsu 柔術
           </Typography>
@@ -100,7 +100,7 @@ const HakkoRyu = () => {
             variant='body1'
             color='text.primary'
             align='left'
-            data-aos='fade-up'
+            data-aos='fade'
           >
             The term Ju-Justu (柔術) is a Japanese word which refers to a kind,
             a group of disciplines or arts (術) whose efficiency lies in an
@@ -113,7 +113,7 @@ const HakkoRyu = () => {
             variant='body1'
             color='text.primary'
             align='left'
-            data-aos='fade-up'
+            data-aos='fade'
           >
             For a very long time oriental people have understood that suppleness
             and adaptability mean life, whereas hardness and stiffness are often
@@ -134,7 +134,7 @@ const HakkoRyu = () => {
             variant='body1'
             color='text.primary'
             align='left'
-            data-aos='fade-up'
+            data-aos='fade'
           >
             But let's come back to Ju-Jutsu: around 1600, after centuries of
             wars, conflicts and unrest, a long era of relative peace was
@@ -150,7 +150,7 @@ const HakkoRyu = () => {
             variant='body1'
             color='text.primary'
             align='left'
-            data-aos='fade-up'
+            data-aos='fade'
           >
             More then just making oneself able to defeat one or even several
             opponents, Ju-Jutsu allows oneself to develop qualities such as
@@ -170,7 +170,7 @@ const HakkoRyu = () => {
             color='primary'
             variant='h4'
             gutterBottom
-            data-aos='fade-left'
+            data-aos='fade'
           >
             Shiatsu 指圧
           </Typography>
@@ -178,7 +178,7 @@ const HakkoRyu = () => {
             variant='body1'
             color='text.primary'
             align='left'
-            data-aos='fade-up'
+            data-aos='fade'
           >
             Shi (指) means "finger" and atsu (圧), "pressure". Shiatsu is a
             technique aiming at maintaining or recovering the energetical
@@ -220,7 +220,7 @@ const HakkoRyu = () => {
             variant='body1'
             color='text.primary'
             align='left'
-            data-aos='fade-up'
+            data-aos='fade'
           >
             Goshin (護身) signifie "protection, défense" et taiso (体操)
             "gymnastique". Le Goshin Taiso est une gymnastique visant également

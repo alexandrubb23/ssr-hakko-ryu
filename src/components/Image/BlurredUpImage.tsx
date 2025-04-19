@@ -6,7 +6,9 @@ import useProgressiveImg, {
 import type { SxThemeProps } from 'types/style';
 
 type BlurredUpImageProps = UseProgressiveImg & {
+  // TODO: Remove sx
   sx?: SxThemeProps;
+  className?: string;
 };
 
 const BoxStyled = styled(Box, {
@@ -33,6 +35,7 @@ const BlurredUpImage = (sources: BlurredUpImageProps) => {
       blur={blur}
       component='img'
       src={src}
+      className={sources.className}
       sx={{
         ...(sources.sx || {}),
       }}

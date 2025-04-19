@@ -101,23 +101,13 @@ const Home = () => {
     <Grid container>
       <Grid
         size={{ xs: 12, lg: 4, xl: 6 }}
-        sx={{
-          display: 'flex',
-          flexDirection: 'column',
-          justifyContent: 'center',
-          padding: {
-            lg: 5,
-          },
-        }}
+        className='flex flex-col justify-center'
       >
         <Typography
           variant='h1'
           align='left'
           data-aos='fade'
-          sx={{
-            paddingBottom: 0,
-            textShadow: '0 0 5px rgba(0, 0, 0, 0.7)',
-          }}
+          className='pb-0 text-shadow-lg/30'
         >
           Hakko Denshin Ryu Ju Jutsu Senshinkan Romania
         </Typography>
@@ -131,13 +121,9 @@ const Home = () => {
         <BlurredUpImage
           highQualitySrc={imageHighQuality}
           lowQualitySrc={imageLowQuality}
-          sx={{
-            position: isMobile ? 'absolute' : 'relative',
-            minHeight: '100vh',
-            top: 0,
-            zIndex: -1,
-            left: 0,
-          }}
+          className={`min-h-dvh top-0 z-[-1] left-0 ${
+            isMobile ? 'absolute' : 'relative'
+          }`}
         />
       </Grid>
     </Grid>

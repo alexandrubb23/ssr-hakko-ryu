@@ -4,7 +4,6 @@ import 'aos/dist/aos.css';
 import { useEffect } from 'react';
 
 import CenterSpinner from '@components/Spinner/CenterSpinner';
-import useBlur from '@hooks/useBlur';
 import useLangStore from '@store/useLangStore';
 import './App.css';
 import Content from './components/Content/Content';
