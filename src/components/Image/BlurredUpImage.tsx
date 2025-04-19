@@ -32,15 +32,17 @@ const BlurredUpImage = (props: BlurredUpImageProps) => {
   if (!src) return null;
 
   return (
-    <Box data-aos={props.animate}>
+    <Box
+      data-aos={props.animate}
+      sx={{
+        ...(props.sx || {}),
+      }}
+    >
       <BoxStyled
         blur={blur}
         component='img'
         src={src}
         className={props.className}
-        sx={{
-          ...(props.sx || {}),
-        }}
       />
     </Box>
   );
