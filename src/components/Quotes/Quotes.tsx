@@ -54,6 +54,7 @@ const Quotes = ({ data }: Props) => {
               sx={{
                 fontSize: 'clamp(1rem, 2vw, 1.5rem)',
                 fontStyle: 'italic',
+                textShadow: '0 0 5px rgba(0, 0, 0, 0.7)',
               }}
             >
               {quote}
@@ -63,6 +64,7 @@ const Quotes = ({ data }: Props) => {
               align='right'
               sx={{
                 fontSize: 'clamp(1rem, 2vw, 1.5rem)',
+                textShadow: '0 0 5px rgba(0, 0, 0, 0.7)',
               }}
             >
               —{author},

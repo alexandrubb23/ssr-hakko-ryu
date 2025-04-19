@@ -21,9 +21,14 @@ const useProgressiveImg = ({
     const img = new Image();
     img.src = highQualitySrc;
 
-    img.onload = () => {
-      setSrc(highQualitySrc);
-    };
+    img
+      .decode()
+      .then(() => {
+        setSrc(highQualitySrc);
+      })
+      .catch(() => {
+        img.onload = () => setSrc(highQualitySrc);
+      });
   }, [lowQualitySrc, highQualitySrc]);
 
   return [src, { blur: src === lowQualitySrc }];

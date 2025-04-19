@@ -11,7 +11,7 @@ type BlurredUpImageProps = UseProgressiveImg & {
 
 const BoxStyled = styled(Box, {
   shouldForwardProp: prop => prop !== 'blur',
-})<{ blur: boolean; component?: React.ElementType; src: string }>(
+})<{ blur: boolean; component: React.ElementType; src: string }>(
   ({ blur }) => ({
     width: '100%',
     filter: blur ? 'blur(10px)' : 'none',
@@ -25,6 +25,9 @@ const BoxStyled = styled(Box, {
 
 const BlurredUpImage = (sources: BlurredUpImageProps) => {
   const [src, { blur }] = useProgressiveImg(sources);
+
+  if (!src) return null;
+
   return (
     <BoxStyled
       blur={blur}

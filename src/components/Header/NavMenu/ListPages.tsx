@@ -43,21 +43,22 @@ const ListPages = ({ sx, onPageChange }: Props) => {
           <LanguageSwitcher />
         </ListItemStyle>
         {pages.map(page => {
+          const cssProps =
+            location.pathname === normalizePath(page.path)
+              ? {
+                  border: '1px solid #AB96FF',
+                  borderRadius: '20px',
+                  padding: '2px 15px',
+                }
+              : {};
+
           return (
             <ListItemStyle key={page.path} sx={sx?.item}>
               <Typography
                 variant='body1'
                 sx={{
                   textAlign: 'center',
-                  a: {
-                    color:
-                      location.pathname === normalizePath(page.path)
-                        ? '#AB96FF'
-                        : 'white',
-                  },
-                  'a:hover': {
-                    color: 'inherit',
-                  },
+                  ...cssProps,
                 }}
               >
                 <Link to={normalizePath(page.path)} onClick={onPageChange}>

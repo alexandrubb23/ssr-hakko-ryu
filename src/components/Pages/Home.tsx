@@ -1,5 +1,5 @@
 import FormattedMessage from '@components/FormattedMessage/FormattedMessage';
-import { Box, Grid, Typography } from '@mui/material';
+import { Grid, Typography } from '@mui/material';
 
 type Quote = {
   quote: string;
@@ -83,9 +83,9 @@ import desktopHighQuality from '@assets/images/108.webp';
 import mobileLowQuality from '@assets/images/180-small.jpg';
 import mobileHighQuality from '@assets/images/180.webp';
 import BlurredUpImage from '@components/Image/BlurredUpImage';
+import Quotes from '@components/Quotes/Quotes';
 import useIsMobile from '@hooks/isMobile';
 import useDeviceImageType from '@hooks/useDeviceImageType';
-import Quotes from '@components/Quotes/Quotes';
 
 const Home = () => {
   const isMobile = useIsMobile();
@@ -98,49 +98,49 @@ const Home = () => {
   });
 
   return (
-    <Box sx={{ flexGrow: 1 }}>
-      <Grid container spacing={2}>
-        <Grid
-          size={{ xs: 12, md: 4 }}
+    <Grid container>
+      <Grid
+        size={{ xs: 12, lg: 4, xl: 6 }}
+        sx={{
+          display: 'flex',
+          flexDirection: 'column',
+          justifyContent: 'center',
+          padding: {
+            lg: 5,
+          },
+        }}
+      >
+        <Typography
+          variant='h1'
+          align='left'
+          data-aos='fade'
           sx={{
-            display: 'flex',
-            flexDirection: 'column',
-            justifyContent: 'center',
-            padding: {
-              lg: 5,
-            },
+            paddingBottom: 0,
+            textShadow: '0 0 5px rgba(0, 0, 0, 0.7)',
           }}
         >
-          <Typography
-            variant='h1'
-            align='left'
-            data-aos='fade'
-            sx={{
-              paddingBottom: 0,
-            }}
-          >
-            Hakko Denshin Ryu Ju Jutsu Senshinkan Romania
-          </Typography>
+          Hakko Denshin Ryu Ju Jutsu Senshinkan Romania
+        </Typography>
 
-          <Typography variant='hakkoSubtitle' data-aos='fade' align='left'>
-            <FormattedMessage id='page.home.subtitle' />
-          </Typography>
-          <Quotes data={quotes} />
-        </Grid>
-        <Grid size={{ xs: 12, md: 8 }}>
-          <BlurredUpImage
-            highQualitySrc={imageHighQuality}
-            lowQualitySrc={imageLowQuality}
-            sx={{
-              position: isMobile ? 'absolute' : 'relative',
-              minHeight: '100vh',
-              top: 0,
-              zIndex: -1,
-            }}
-          />
-        </Grid>
+        <Typography variant='h2Inter' data-aos='fade' align='left'>
+          <FormattedMessage id='page.home.subtitle' />
+        </Typography>
+        <Quotes data={quotes} />
       </Grid>
-    </Box>
+      <Grid size={{ xs: 12, lg: 8, xl: 6 }}>
+        <BlurredUpImage
+          highQualitySrc={imageHighQuality}
+          lowQualitySrc={imageLowQuality}
+          sx={{
+            position: isMobile ? 'absolute' : 'relative',
+            minHeight: '100vh',
+            top: 0,
+            zIndex: -1,
+            left: 0,
+          }}
+        />
+      </Grid>
+    </Grid>
   );
 };
 

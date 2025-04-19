@@ -31,7 +31,7 @@ const theme = createTheme({
   },
   typography: {
     fontFamily: 'Jarene, Arial, sans-serif',
-    hakkoSubtitle: {
+    h2Inter: {
       fontFamily: 'Inter',
       fontSize: 'clamp(1rem, calc(2vw + 1rem), 3rem)',
       fontWeight: 400,
@@ -39,6 +39,7 @@ const theme = createTheme({
       padding: 16,
       paddingBottom: 0,
       paddingTop: 0,
+      textShadow: '0 0 5px rgba(0, 0, 0, 0.7)',
     },
     h1: {
       padding: 16,
@@ -68,7 +69,7 @@ const theme = createTheme({
     MuiTypography: {
       defaultProps: {
         variantMapping: {
-          hakkoSubtitle: 'h2',
+          h2Inter: 'h2',
         },
       },
     },

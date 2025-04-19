@@ -75,8 +75,6 @@ const HakkoRyu = () => {
         </Grid>
       </Grid>
 
-      <Box mt={6} />
-
       {/* Column 2 */}
       <Grid container spacing={2} alignItems='center'>
         {/* Image on the left */}

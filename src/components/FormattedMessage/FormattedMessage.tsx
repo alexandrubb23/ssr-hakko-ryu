@@ -3,14 +3,14 @@ import { FormattedMessage as ReactFormattedMessage } from 'react-intl';
 
 import type { IntlMessageID } from 'i18n/messages';
 
-type FormatedMessageProps = {
+type FormattedMessageProps = {
   id: IntlMessageID;
   defaultMessage?: string;
   values?: Record<string, React.ReactNode>;
   children?: () => React.ReactNode;
 };
 
-const FormattedMessage = (props: FormatedMessageProps) => (
+const FormattedMessage = (props: FormattedMessageProps) => (
   <ReactFormattedMessage
     values={{
       span: (value: React.ReactNode) => <span key={uuid()}>{value}</span>,

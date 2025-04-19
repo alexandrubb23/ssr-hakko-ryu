@@ -8,7 +8,7 @@ const LanguageSwitcher = () => {
   const label = lang === 'ro' ? 'EN' : 'RO';
 
   return (
-    <Button variant='contained' onClick={toggleLang}>
+    <Button variant='outlined' onClick={toggleLang}>
       {label}
     </Button>
   );

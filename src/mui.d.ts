@@ -3,17 +3,17 @@ import '@mui/material/styles';
 
 declare module '@mui/material/styles' {
   interface TypographyVariants {
-    hakkoSubtitle: React.CSSProperties;
+    h2Inter: React.CSSProperties;
   }
 
   // allow configuration using `createTheme`
   interface TypographyVariantsOptions {
-    hakkoSubtitle?: React.CSSProperties;
+    h2Inter?: React.CSSProperties;
   }
 }
 
 declare module '@mui/material/Typography' {
   interface TypographyPropsVariantOverrides {
-    hakkoSubtitle: true;
+    h2Inter: true;
   }
 }
