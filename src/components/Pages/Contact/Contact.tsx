@@ -25,11 +25,17 @@ const Contact = () => {
           <Box
             sx={{
               maxWidth: {
-                sm: 250,
+                sm: 350,
               },
             }}
           >
-            <Typography variant='h1'>
+            <Typography
+              variant='h1'
+              align='left'
+              sx={{
+                padding: 0,
+              }}
+            >
               <FormattedMessage id='page.contact.title' />
             </Typography>
             <Typography variant='body1'>
