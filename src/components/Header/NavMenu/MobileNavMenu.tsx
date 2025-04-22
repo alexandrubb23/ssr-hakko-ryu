@@ -2,6 +2,7 @@ import { Box, FormLabel, List, styled } from '@mui/material';
 import { useState } from 'react';
 
 import ListPages from './ListPages';
+import useMenuStore from '@store/useMenuStore';
 
 const commonStyle = () => ({
   backgroundColor: 'var(--foreground-color)',
@@ -71,16 +72,10 @@ const BoxStyled = styled(Box)<{ open: boolean; isClosed: boolean }>(
 );
 
 const MobileNavMenu = () => {
-  const [open, setOpen] = useState(false);
   const [isClosed, setIsClosed] = useState(false);
 
-  const handleCheckboxChange = () => {
-    setOpen(prev => !prev);
-  };
-
-  const handlePageChange = () => {
-    setOpen(false);
-  };
+  const isOpen = useMenuStore(state => state.isOpen);
+  const toggleMenu = useMenuStore(state => state.toggleMenu);
 
   const handleTransitionEnd = (e: React.TransitionEvent) => {
     // Prevent bubbling
@@ -90,11 +85,11 @@ const MobileNavMenu = () => {
 
   return (
     <>
-      <FormLabelStyled open={open} sx={{ zIndex: 2 }}>
-        <input type='checkbox' onChange={handleCheckboxChange} />
+      <FormLabelStyled open={isOpen} sx={{ zIndex: 2 }}>
+        <input type='checkbox' onChange={toggleMenu} />
       </FormLabelStyled>
       <BoxStyled
-        open={open}
+        open={isOpen}
         isClosed={isClosed}
         sx={{
           zIndex: 1,
@@ -102,7 +97,7 @@ const MobileNavMenu = () => {
         onTransitionEnd={handleTransitionEnd}
       >
         <ListPages
-          onPageChange={handlePageChange}
+          onPageChange={toggleMenu}
           sx={{
             item: {
               top: 100,

@@ -1,9 +1,10 @@
-import { Box, Stack, styled } from '@mui/material';
+import { Stack, styled } from '@mui/material';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { useEffect } from 'react';
 
 import CenterSpinner from '@components/Spinner/CenterSpinner';
+import useBodyOverflow from '@hooks/useBodyOverflow';
 import useLangStore from '@store/useLangStore';
 import './App.css';
 import Content from './components/Content/Content';
@@ -26,6 +27,8 @@ const StackStyled = styled(Stack, {
 }));
 
 const App = () => {
+  useBodyOverflow();
+
   const hydrated = useLangStore(state => state.hydrated);
 
   useEffect(() => {
@@ -35,14 +38,14 @@ const App = () => {
   }, []);
 
   return (
-    <Box>
+    <>
       {!hydrated && <CenterSpinner />}
       <StackStyled hydrated={hydrated}>
         <Header />
         <Content />
         <Footer />
       </StackStyled>
-    </Box>
+    </>
   );
 };
 
