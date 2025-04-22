@@ -80,9 +80,10 @@ const theme = createTheme({
           --bar-height: 2px;
           --hamburger-gap: 8px;
           --foreground-color: #fff;
-          --background-color: #000;
+          --background-color: rgba(0, 0, 0, 0.5);
+          --backdrop-filter: 20px;
           --hamburger-margin: 18px;
-          --animation-timing: 300ms ease-in-out;
+          --animation-timing: .5s ease-in-out;
           --hamburger-height: calc(var(--bar-height) * 3 + var(--hamburger-gap) * 2);
         }
         @font-face {

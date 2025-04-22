@@ -26,7 +26,7 @@ const StackStyled = styled(Stack, {
 }));
 
 const App = () => {
-  const { hydrated } = useLangStore();
+  const hydrated = useLangStore(state => state.hydrated);
 
   useEffect(() => {
     AOS.init({

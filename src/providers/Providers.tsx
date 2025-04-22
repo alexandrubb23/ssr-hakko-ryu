@@ -16,7 +16,7 @@ interface Props {
 const queryClient = new QueryClient();
 
 const Providers = ({ children, cache }: PropsWithChildren<Props>) => {
-  const { lang } = useLangStore();
+  const lang = useLangStore(state => state.lang);
 
   return (
     <CacheProvider value={cache}>

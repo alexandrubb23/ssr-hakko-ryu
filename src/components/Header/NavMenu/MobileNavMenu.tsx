@@ -50,25 +50,29 @@ const FormLabelStyled = styled(FormLabel)<{ open: boolean }>(({ open }) => ({
   },
 }));
 
-const BoxStyled = styled(Box)<{ open: boolean }>(({ open }) => ({
-  alignItems: 'center',
-  backgroundColor: 'var(--background-color)',
-  display: 'flex',
-  flexDirection: 'column',
-  right: 0,
-  marginTop: 'calc(var(--hamburger-margin) + var(--hamburger-margin) + 1rem)',
-  minHeight: '100vh',
-  overflow: 'hidden',
-  position: 'absolute',
-  top: -52,
-  transition:
-    'transform var(--animation-timing), width var(--animation-timing)',
-  transform: open ? 'translateX(0)' : 'translateX(100%)',
-  width: open ? '100vw' : '0',
-}));
+const BoxStyled = styled(Box)<{ open: boolean; isClosed: boolean }>(
+  ({ open, isClosed }) => ({
+    alignItems: 'center',
+    backgroundColor: 'var(--background-color)',
+    backdropFilter: !isClosed ? `blur(var(--backdrop-filter))` : 'none',
+    display: 'flex',
+    flexDirection: 'column',
+    right: 0,
+    marginTop: 'calc(var(--hamburger-margin) + var(--hamburger-margin) + 1rem)',
+    minHeight: '100vh',
+    overflow: 'hidden',
+    position: 'absolute',
+    top: -52,
+    transition:
+      'transform var(--animation-timing), width var(--animation-timing)',
+    transform: open ? 'translateX(0)' : 'translateX(100vw)',
+    width: open ? '100vw' : '0',
+  })
+);
 
 const MobileNavMenu = () => {
   const [open, setOpen] = useState(false);
+  const [isClosed, setIsClosed] = useState(false);
 
   const handleCheckboxChange = () => {
     setOpen(prev => !prev);
@@ -78,6 +82,12 @@ const MobileNavMenu = () => {
     setOpen(false);
   };
 
+  const handleTransitionEnd = (e: React.TransitionEvent) => {
+    // Prevent bubbling
+    if (e.target !== e.currentTarget) return;
+    setIsClosed(prev => !prev);
+  };
+
   return (
     <>
       <FormLabelStyled open={open} sx={{ zIndex: 2 }}>
@@ -85,9 +95,11 @@ const MobileNavMenu = () => {
       </FormLabelStyled>
       <BoxStyled
         open={open}
+        isClosed={isClosed}
         sx={{
           zIndex: 1,
         }}
+        onTransitionEnd={handleTransitionEnd}
       >
         <ListPages
           onPageChange={handlePageChange}
