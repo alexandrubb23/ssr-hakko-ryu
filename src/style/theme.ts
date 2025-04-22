@@ -85,6 +85,7 @@ const theme = createTheme({
           --hamburger-margin: 18px;
           --animation-timing: .5s ease-in-out;
           --hamburger-height: calc(var(--bar-height) * 3 + var(--hamburger-gap) * 2);
+          --body-background: #000;
         }
         @font-face {
           font-family: 'Jarene';
@@ -108,7 +109,7 @@ const theme = createTheme({
           src: local('Inter'), url(${Inter}) format('opentype');
         }
         body {
-          background-color: #000;
+          background-color: var(--body-background);
           background-size: cover;
           background-position: center;
           color: #e7e7e7;

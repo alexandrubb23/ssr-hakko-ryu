@@ -51,37 +51,27 @@ const FormLabelStyled = styled(FormLabel)<{ open: boolean }>(({ open }) => ({
   },
 }));
 
-const BoxStyled = styled(Box)<{ open: boolean; isClosed: boolean }>(
-  ({ open, isClosed }) => ({
-    alignItems: 'center',
-    backgroundColor: 'var(--background-color)',
-    backdropFilter: !isClosed ? `blur(var(--backdrop-filter))` : 'none',
-    display: 'flex',
-    flexDirection: 'column',
-    right: 0,
-    marginTop: 'calc(var(--hamburger-margin) + var(--hamburger-margin) + 1rem)',
-    minHeight: '100vh',
-    overflow: 'hidden',
-    position: 'absolute',
-    top: -52,
-    transition:
-      'transform var(--animation-timing), width var(--animation-timing)',
-    transform: open ? 'translateX(0)' : 'translateX(100vw)',
-    width: open ? '100vw' : '0',
-  })
-);
+const BoxStyled = styled(Box)<{ open: boolean }>(({ open }) => ({
+  alignItems: 'center',
+  backgroundColor: 'var(--background-color)',
+  backdropFilter: open ? `blur(var(--backdrop-filter))` : 'none',
+  display: 'flex',
+  flexDirection: 'column',
+  right: 0,
+  marginTop: 'calc(var(--hamburger-margin) + var(--hamburger-margin) + 1rem)',
+  minHeight: '100vh',
+  overflow: 'hidden',
+  position: 'absolute',
+  top: -52,
+  transition:
+    'transform var(--animation-timing), width var(--animation-timing)',
+  transform: open ? 'translateX(0)' : 'translateX(100vw)',
+  width: open ? '100vw' : '0',
+}));
 
 const MobileNavMenu = () => {
-  const [isClosed, setIsClosed] = useState(false);
-
   const isOpen = useMenuStore(state => state.isOpen);
   const toggleMenu = useMenuStore(state => state.toggleMenu);
-
-  const handleTransitionEnd = (e: React.TransitionEvent) => {
-    // Prevent bubbling
-    if (e.target !== e.currentTarget) return;
-    setIsClosed(prev => !prev);
-  };
 
   return (
     <>
@@ -90,11 +80,9 @@ const MobileNavMenu = () => {
       </FormLabelStyled>
       <BoxStyled
         open={isOpen}
-        isClosed={isClosed}
         sx={{
           zIndex: 1,
         }}
-        onTransitionEnd={handleTransitionEnd}
       >
         <ListPages
           onPageChange={toggleMenu}
