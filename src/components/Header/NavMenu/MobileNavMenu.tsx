@@ -54,7 +54,7 @@ const FormLabelStyled = styled(FormLabel)<{ open: boolean }>(({ open }) => ({
 const BoxStyled = styled(Box)<{ open: boolean }>(({ open }) => ({
   alignItems: 'center',
   backgroundColor: 'var(--background-color)',
-  backdropFilter: open ? `blur(var(--backdrop-filter))` : 'none',
+  backdropFilter: 'blur(var(--backdrop-filter))',
   display: 'flex',
   flexDirection: 'column',
   right: 0,
