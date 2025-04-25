@@ -71,6 +71,9 @@ const HakkoRyu = () => {
           <BlurredUpImage
             lowQualitySrc={hakkoRyuLowQualityImage}
             highQualitySrc={hakkoRyuHighQualityImage}
+            sx={{
+              aspectRatio: 'auto 360 / 240',
+            }}
           />
         </Grid>
       </Grid>

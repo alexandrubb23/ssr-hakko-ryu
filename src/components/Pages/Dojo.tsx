@@ -58,6 +58,9 @@ const Dojo = () => {
         <BlurredUpImage
           lowQualitySrc={hakkoDenshinRyuLowQualityImage}
           highQualitySrc={hakkoDenshinRyuHighQualityImage}
+          sx={{
+            aspectRatio: 'auto 360 / 240',
+          }}
         />
       </Grid>
     </Grid>

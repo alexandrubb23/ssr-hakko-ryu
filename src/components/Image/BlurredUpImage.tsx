@@ -9,41 +9,50 @@ type BlurredUpImageProps = UseProgressiveImg & {
   // TODO: Remove sx
   sx?: SxThemeProps;
   className?: string;
-  animate?: string;
+  animate?: 'fade' | 'none';
+  aspectRatio?: string;
 };
 
 const BoxStyled = styled(Box, {
   shouldForwardProp: prop => prop !== 'blur',
 })<{ blur: boolean; component: React.ElementType; src: string }>(
   ({ blur }) => ({
-    width: '100%',
+    backfaceVisibility: 'hidden',
     filter: blur ? 'blur(10px)' : 'none',
     height: '100%',
     maxHeight: '100vh',
+    MozBackfaceVisibility: 'hidden',
     objectFit: 'cover',
     objectPosition: 'center',
     transition: blur ? 'none' : 'filter 0.3s ease-out',
+    WebkitBackfaceVisibility: 'hidden',
+    width: '100%',
+    willChange: 'filter',
   })
 );
 
-const BlurredUpImage = (props: BlurredUpImageProps) => {
-  const [src, { blur }] = useProgressiveImg(props);
+const BlurredUpImage = ({
+  animate = 'fade',
+  className,
+  highQualitySrc,
+  lowQualitySrc,
+  sx,
+}: BlurredUpImageProps) => {
+  const [src, { blur }] = useProgressiveImg({
+    lowQualitySrc,
+    highQualitySrc,
+  });
 
   if (!src) return null;
 
   return (
     <Box
-      data-aos={props.animate}
+      data-aos={!blur ? animate : 'none'}
       sx={{
-        ...(props.sx || {}),
+        ...(sx || {}),
       }}
     >
-      <BoxStyled
-        blur={blur}
-        component='img'
-        src={src}
-        className={props.className}
-      />
+      <BoxStyled blur={blur} component='img' src={src} className={className} />
     </Box>
   );
 };

@@ -63,6 +63,7 @@ const Contact = () => {
           highQualitySrc={contactHighQualityImage}
           sx={{
             width: '100%',
+            aspectRatio: 'auto 360 / 540',
           }}
         />
       </Grid>

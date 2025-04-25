@@ -119,11 +119,15 @@ const Home = () => {
       </Grid>
       <Grid size={{ xs: 12, lg: 8, xl: 6 }}>
         <BlurredUpImage
+          animate='none'
           highQualitySrc={imageHighQuality}
           lowQualitySrc={imageLowQuality}
           className={`min-h-dvh top-0 z-[-2] left-0 ${
             isMobile ? 'absolute' : 'relative'
           }`}
+          sx={{
+            aspectRatio: !isMobile ? 'auto 1372 / 914' : 'auto 360 / 540',
+          }}
         />
       </Grid>
     </Grid>

@@ -19,6 +19,7 @@ const Senshinkan = () => {
           lowQualitySrc={senshinkanLowQualityImage}
           highQualitySrc={senshinkanHighQualityImage}
           sx={{
+            aspectRatio: 'auto 360 / 539',
             width: {
               lg: '80%',
               md: '100%',
