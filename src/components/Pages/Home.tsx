@@ -117,14 +117,16 @@ const Home = () => {
         </Typography>
         <Quotes data={quotes} />
       </Grid>
-      <Grid size={{ xs: 12, lg: 8, xl: 6 }}>
+      <Grid
+        size={{ xs: 12, lg: 8, xl: 6 }}
+        className={`min-h-dvh top-0 z-[-2] left-0 ${
+          isMobile ? 'absolute' : 'relative'
+        }`}
+      >
         <BlurredUpImage
-          animate='none'
           highQualitySrc={imageHighQuality}
           lowQualitySrc={imageLowQuality}
-          className={`min-h-dvh top-0 z-[-2] left-0 ${
-            isMobile ? 'absolute' : 'relative'
-          }`}
+          className={`min-h-dvh`}
           sx={{
             aspectRatio: !isMobile ? 'auto 1372 / 914' : 'auto 360 / 540',
           }}

@@ -33,7 +33,7 @@ const App = () => {
 
   useEffect(() => {
     AOS.init({
-      duration: PAGE_TRANSITION_DURATION,
+      duration: 3000,
     });
   }, []);
 
