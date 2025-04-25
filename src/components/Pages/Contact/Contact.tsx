@@ -31,6 +31,7 @@ const Contact = () => {
           >
             <Typography
               variant='h1'
+              color='primary'
               align='left'
               sx={{
                 padding: 0,
