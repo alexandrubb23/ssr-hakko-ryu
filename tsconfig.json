@@ -30,7 +30,8 @@
       "@providers/*": ["providers/*"],
       "@styles/*": ["styles/*"],
       "@utils/*": ["utils/*"],
-      "@store/*": ["store/*"]
+      "@store/*": ["store/*"],
+      "@locales/*": ["locales/*"]
     }
   },
   "include": ["src", "mui.d.ts"],

@@ -21,6 +21,7 @@ export default defineConfig({
       '@routes': '/src/routes',
       '@store': '/src/store',
       '@types': '/src/types',
+      '@locales': '/src/locales',
     },
   },
 });

@@ -5,29 +5,27 @@ import { getQuoteDisplayTime } from '@utils/time';
 import { Box, Typography } from '@mui/material';
 import { AnimatePresence, motion } from 'framer-motion';
 
-export type Quote = {
-  quote: string;
-  author: string;
-};
+import { quotes } from '@locales/quotes.json';
+import { useIntl } from 'react-intl';
+import type { Lang } from '@store/useLangStore';
 
-interface Props {
-  data: Quote[];
-}
-
-const Quotes = ({ data }: Props) => {
+const Quotes = () => {
   const [key, setKey] = useState(0);
   const [currentQuote, setCurrentQuote] = useState(0);
+
+  const intl = useIntl();
+  const locale = intl.locale as Lang;
 
   useInterval(() => {
     setCurrentQuote(prev => {
       const nextQuote = prev + 1;
-      return nextQuote >= data.length ? 0 : nextQuote;
+      return nextQuote >= quotes[locale].length ? 0 : nextQuote;
     });
 
     setKey(prev => prev + 1);
-  }, getQuoteDisplayTime(data[currentQuote].quote));
+  }, getQuoteDisplayTime(quotes[locale][currentQuote].quote));
 
-  const { author, quote } = data[currentQuote];
+  const { author, quote } = quotes[locale][currentQuote];
 
   return (
     <Box
@@ -57,7 +55,7 @@ const Quotes = ({ data }: Props) => {
                 textShadow: '0 0 5px rgba(0, 0, 0, 0.7)',
               }}
             >
-              {quote}
+              {intl.formatMessage({ defaultMessage: quote, id: quote })}
             </Typography>
             <Typography
               variant='body2'
