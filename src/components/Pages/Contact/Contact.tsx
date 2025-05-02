@@ -17,9 +17,9 @@ const Contact = () => {
       {/* Text on the left */}
       <Grid size={{ xs: 12, md: 6 }} order={{ xs: 1, md: 0 }}>
         <Stack
-          spacing={2}
+          spacing={4}
           sx={{ padding: 2 }}
-          direction={{ xs: 'column', sm: 'row' }}
+          direction={{ xs: 'column', sm: 'column', lg: 'row' }}
           data-aos='fade'
         >
           <Box
