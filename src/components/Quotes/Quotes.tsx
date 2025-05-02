@@ -55,7 +55,7 @@ const Quotes = () => {
                 textShadow: '0 0 5px rgba(0, 0, 0, 0.7)',
               }}
             >
-              {intl.formatMessage({ defaultMessage: quote, id: quote })}
+              {quote}
             </Typography>
             <Typography
               variant='body2'
