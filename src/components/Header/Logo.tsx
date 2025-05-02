@@ -1,7 +1,7 @@
 import { Box, Typography } from '@mui/material';
 import { Link } from 'react-router';
 
-import LogoIcon from '@assets/images/logo.png';
+import LogoIcon from '@assets/images/logo.webp';
 
 const Logo = () => (
   <Box

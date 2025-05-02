@@ -48,6 +48,7 @@ const Home = () => {
         }`}
       >
         <BlurredUpImage
+          animate='none'
           highQualitySrc={imageHighQuality}
           lowQualitySrc={imageLowQuality}
           className={`min-h-dvh`}
