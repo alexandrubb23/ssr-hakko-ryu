@@ -6,6 +6,21 @@ import FacebookIcon from '@mui/icons-material/Facebook';
 import WhatsAppIcon from '@mui/icons-material/WhatsApp';
 import YouTubeIcon from '@mui/icons-material/YouTube';
 
+const items = [
+  {
+    href: 'https://www.facebook.com/profile.php?id=61573820020885',
+    icon: FacebookIcon,
+  },
+  {
+    href: 'https://www.youtube.com/@HakkoDenshinRyuJuJutsuRomania',
+    icon: YouTubeIcon,
+  },
+  {
+    href: 'https://api.whatsapp.com/send?phone=+40735538558&text=Hi, I contacted you Through your website."',
+    icon: WhatsAppIcon,
+  },
+];
+
 const SocialMediaItem = () => {
   return (
     <MediaItem
@@ -21,18 +36,11 @@ const SocialMediaItem = () => {
           marginTop: 1,
         }}
       >
-        <a href='https://www.facebook.com/hakkodenshinryuromania'>
-          <SvgIcon component={FacebookIcon} fontSize='small' />
-        </a>
-        <a href='https://www.instagram.com/hakkodenshinryuromania/'>
-          <SvgIcon component={YouTubeIcon} fontSize='small' />
-        </a>
-        <a
-          href='https://api.whatsapp.com/send?phone=+40735538558&text=Hi, I contacted you Through your website."'
-          target='_blank'
-        >
-          <SvgIcon component={WhatsAppIcon} fontSize='small' />
-        </a>
+        {items.map(item => (
+          <a href={item.href} target='_blank' key={item.href}>
+            <SvgIcon component={item.icon} fontSize='small' />
+          </a>
+        ))}
       </Box>
     </MediaItem>
   );
