@@ -26,6 +26,7 @@ const StackStyled = styled(Stack, {
   animation: `fadeIn ${PAGE_TRANSITION_DURATION / 1000}s ease-in forwards`,
 }));
 
+// TODO: Just for testing heroku deployment, remove later
 const App = () => {
   useBodyOverflow();
 
