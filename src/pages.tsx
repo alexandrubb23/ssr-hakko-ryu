@@ -21,26 +21,26 @@ export const pages: Page[] = [
   {
     component: Home,
     path: 'home',
-    title: 'Home Page',
+    title: 'Home - Hakko Denshin Ryu Jujutsu',
   },
   {
     component: HakkoRyuRGB,
     path: 'hakko-ryu',
-    title: 'Hakko Ryu Page',
+    title: 'Hakko Ryu - Hakko Denshin Ryu Jujutsu',
   },
   {
     component: Senshinkan,
     path: 'senshinkan',
-    title: 'Senshinkan Page',
+    title: 'Senshinkan Romania - Hakko Denshin Ryu Jujutsu',
   },
   {
     component: Dojo,
     path: 'dojo',
-    title: 'Dojo Page',
+    title: 'Senshinkan Dojo - Hakko Denshin Ryu Jujutsu',
   },
   {
     path: 'contact',
     component: Contact,
-    title: 'Contact Page',
+    title: 'Contact Senshinkan Romania - Hakko Denshin Ryu Jujutsu',
   },
 ] as const;
