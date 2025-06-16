@@ -5,6 +5,7 @@ import { styled, Theme } from '@mui/material/styles';
 import { normalizePath } from '@utils/routes';
 import { Link, useLocation } from 'react-router';
 import { pages } from '../../../pages';
+import useIsMobile from '@hooks/isMobile';
 
 interface Props {
   sx?: {
@@ -30,47 +31,51 @@ const ListItemStyle = styled(ListItem)(({ sx }) => ({
 }));
 
 const ListPages = ({ sx, onPageChange }: Props) => {
+  const isMobile = useIsMobile();
   const location = useLocation();
 
-  return (
-    <>
-      <List sx={sx?.list}>
-        <ListItemStyle
+  const langItem = (
+    <ListItemStyle
+      sx={{
+        paddingTop: 0,
+      }}
+    >
+      <LanguageSwitcher />
+    </ListItemStyle>
+  );
+
+  const pageItems = pages.map(page => {
+    const cssProps =
+      location.pathname === normalizePath(page.path)
+        ? {
+            border: '1px solid #AB96FF',
+            borderRadius: '20px',
+            padding: '2px 15px',
+          }
+        : {};
+
+    return (
+      <ListItemStyle key={page.path} sx={sx?.item}>
+        <Typography
+          variant='body1'
           sx={{
-            paddingTop: 0,
+            textAlign: 'center',
+            ...cssProps,
           }}
         >
-          <LanguageSwitcher />
-        </ListItemStyle>
-        {pages.map(page => {
-          const cssProps =
-            location.pathname === normalizePath(page.path)
-              ? {
-                  border: '1px solid #AB96FF',
-                  borderRadius: '20px',
-                  padding: '2px 15px',
-                }
-              : {};
+          <Link to={normalizePath(page.path)} onClick={onPageChange}>
+            <FormattedMessage id={`header.menu.${page.path}`} />
+          </Link>
+        </Typography>
+      </ListItemStyle>
+    );
+  });
 
-          return (
-            <ListItemStyle key={page.path} sx={sx?.item}>
-              <Typography
-                variant='body1'
-                sx={{
-                  textAlign: 'center',
-                  ...cssProps,
-                }}
-              >
-                <Link to={normalizePath(page.path)} onClick={onPageChange}>
-                  <FormattedMessage id={`header.menu.${page.path}`} />
-                </Link>
-              </Typography>
-            </ListItemStyle>
-          );
-        })}
-      </List>
-    </>
-  );
+  const listContent = isMobile
+    ? [langItem, ...pageItems]
+    : [...pageItems, langItem];
+
+  return <List sx={sx?.list}>{listContent}</List>;
 };
 
 export default ListPages;
