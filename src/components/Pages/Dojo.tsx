@@ -1,22 +1,22 @@
-import { Box, Grid, Typography } from '@mui/material';
+import { Grid, Typography } from "@mui/material";
 
-import hakkoDenshinRyuHighQualityImage from '@assets/images/200.webp';
-import hakkoDenshinRyuLowQualityImage from '@assets/images/200-small.webp';
-import BlurredUpImage from '@components/Image/BlurredUpImage';
+import hakkoDenshinRyuLowQualityImage from "@assets/images/200-small.webp";
+import hakkoDenshinRyuHighQualityImage from "@assets/images/200.webp";
+import BlurredUpImage from "@components/Image/BlurredUpImage";
 
 const Dojo = () => {
   return (
-    <Grid container spacing={2} alignItems='center'>
+    <Grid container spacing={2} alignItems="center">
       {/* Text on the left */}
       <Grid size={{ xs: 12, md: 6 }} order={{ xs: 1, md: 0 }}>
-        <Typography color='primary' variant='h1' gutterBottom>
+        <Typography color="primary" variant="h1" gutterBottom>
           Senshinkan Romania (洗心館)
         </Typography>
         <Typography
-          variant='body1'
-          color='text.primary'
-          align='left'
-          data-aos='fade'
+          variant="body1"
+          color="text.primary"
+          align="left"
+          data-aos="fade"
         >
           Master Okuyama Ryuho (奥山龍峰) was born in 1901 and died in 1987. In
           addition to traditional Japanese medicine and oratorical science, he
@@ -26,10 +26,10 @@ const Dojo = () => {
           short period.
         </Typography>
         <Typography
-          variant='body1'
-          color='text.primary'
-          align='left'
-          data-aos='fade'
+          variant="body1"
+          color="text.primary"
+          align="left"
+          data-aos="fade"
         >
           Master Okuyama Ryuho (奥山龍峰) was born in 1901 and died in 1987. In
           addition to traditional Japanese medicine and oratorical science, he
@@ -39,10 +39,10 @@ const Dojo = () => {
           short period.
         </Typography>
         <Typography
-          variant='body1'
-          color='text.primary'
-          align='left'
-          data-aos='fade'
+          variant="body1"
+          color="text.primary"
+          align="left"
+          data-aos="fade"
         >
           Master Okuyama Ryuho (奥山龍峰) was born in 1901 and died in 1987. In
           addition to traditional Japanese medicine and oratorical science, he
@@ -59,7 +59,7 @@ const Dojo = () => {
           lowQualitySrc={hakkoDenshinRyuLowQualityImage}
           highQualitySrc={hakkoDenshinRyuHighQualityImage}
           sx={{
-            aspectRatio: 'auto 360 / 240',
+            aspectRatio: "auto 360 / 240",
           }}
         />
       </Grid>

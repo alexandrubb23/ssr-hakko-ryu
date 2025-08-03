@@ -14,11 +14,14 @@ import shiatsuHighQualityImage from "@assets/images/21.webp";
 import goshinTaisoLowQualityImage from "@assets/images/89-small.webp";
 import goshinTaisoHighQualityImage from "@assets/images/89.webp";
 
-const Strong = ({ children }: { children: React.ReactNode }) => (
-  <Box fontWeight="fontWeightBold" display="inline">
-    {children}
-  </Box>
-);
+import mobileLowQuality from "@assets/images/180-small.jpg";
+import mobileHighQuality from "@assets/images/180.webp";
+
+import bowHighQuality from "@assets/images/--262.webp";
+import Strong from "@components/Layout/Strong";
+
+import contactLowQualityImage from "@assets/images/--58-small.webp";
+import contactHighQualityImage from "@assets/images/--58.webp";
 
 const HakkoRyu = () => {
   return (
@@ -29,12 +32,15 @@ const HakkoRyu = () => {
           <BlurredUpImage
             lowQualitySrc={hakkoRyuLowQualityImage}
             highQualitySrc={hakkoRyuHighQualityImage}
-            sx={{
-              aspectRatio: "auto 360 / 240",
-            }}
           />
         </Grid>
-        <Grid size={{ xs: 12, md: 6 }} order={{ xs: 1, md: 1 }}>
+        <Grid
+          size={{ xs: 12, md: 6 }}
+          order={{ xs: 1, md: 1 }}
+          display="flex"
+          flexDirection="column"
+          gap={2}
+        >
           <Typography
             align="center"
             color="primary"
@@ -59,11 +65,27 @@ const HakkoRyu = () => {
             founded in <Strong>1941</Strong> by&nbsp;
             <Strong>Okuyama Ryuho</Strong> (1901–1987), a student of&nbsp;
             <Strong>Sokaku Takeda</Strong> and a practitioner of&nbsp;
-            <Strong>shiatsu</Strong>. This style of self-defense focuses on
-            the&nbsp;
+            <Strong>shiatsu</Strong>.
+          </Typography>
+          <Typography
+            variant="body1"
+            color="text.primary"
+            align="left"
+            data-aos="fade"
+          >
+            {" "}
+            This style of self-defense focuses on the&nbsp;
             <Strong>qi meridian points</Strong> sensitive to pain, allowing a
             defender to create sharp distracting pain to an attacker without
-            causing serious injury. It can therefore be considered a&nbsp;
+            causing serious injury.
+          </Typography>
+          <Typography
+            variant="body1"
+            color="text.primary"
+            align="left"
+            data-aos="fade"
+          >
+            It can therefore be considered a&nbsp;
             <Strong>humanitarian martial technique</Strong>.
           </Typography>
         </Grid>
@@ -211,8 +233,17 @@ const HakkoRyu = () => {
         <Grid size={{ xs: 12, md: 6 }} order={{ xs: 0, md: 1 }}>
           <BlurredUpImage
             animate="fade"
-            lowQualitySrc={shiatsuLowQualityImage}
-            highQualitySrc={shiatsuHighQualityImage}
+            lowQualitySrc={mobileLowQuality}
+            highQualitySrc={mobileHighQuality}
+            sx={{
+              aspectRatio: "auto 360 / 539",
+              width: {
+                lg: "70%",
+                md: "100%",
+                sm: "80%",
+                xs: "80%",
+              },
+            }}
           />
         </Grid>
         <Grid size={{ xs: 12, md: 6 }} order={{ xs: 1, md: 0 }}>
@@ -281,8 +312,8 @@ const HakkoRyu = () => {
         <Grid size={{ xs: 12, md: 6 }} order={{ xs: 0, md: 0 }}>
           <BlurredUpImage
             animate="fade"
-            lowQualitySrc={shiatsuLowQualityImage}
-            highQualitySrc={shiatsuHighQualityImage}
+            lowQualitySrc={bowHighQuality}
+            highQualitySrc={bowHighQuality}
           />
         </Grid>
         <Grid
@@ -332,8 +363,8 @@ const HakkoRyu = () => {
             ,&nbsp;
             <Strong>walking cane</Strong>, <Strong>paper scroll</Strong>, and
             many more. These tools symbolize the <Strong>adaptability</Strong>
-            &nbsp; and <Strong>grace</Strong>
-            inherent in Hakko Denshin Ryu.
+            &nbsp; and <Strong>grace</Strong>&nbsp; inherent in Hakko Denshin
+            Ryu.
           </Typography>
 
           <Typography
@@ -578,8 +609,8 @@ const HakkoRyu = () => {
         <Grid size={{ xs: 12, md: 6 }} order={{ xs: 0, md: 1 }}>
           <BlurredUpImage
             animate="fade"
-            lowQualitySrc={shiatsuLowQualityImage}
-            highQualitySrc={shiatsuHighQualityImage}
+            lowQualitySrc={contactLowQualityImage}
+            highQualitySrc={contactHighQualityImage}
           />
         </Grid>
         <Grid size={{ xs: 12, md: 6 }} order={{ xs: 1, md: 0 }}>
