@@ -22,6 +22,7 @@ export default defineConfig({
       '@store': '/src/store',
       '@types': '/src/types',
       '@locales': '/src/locales',
+      '@pages': '/src/pages',
     },
   },
 });

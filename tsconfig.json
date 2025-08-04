@@ -31,7 +31,8 @@
       "@styles/*": ["styles/*"],
       "@utils/*": ["utils/*"],
       "@store/*": ["store/*"],
-      "@locales/*": ["locales/*"]
+      "@locales/*": ["locales/*"],
+      "@pages/*": ["pages/*"],
     }
   },
   "include": ["src", "mui.d.ts"],

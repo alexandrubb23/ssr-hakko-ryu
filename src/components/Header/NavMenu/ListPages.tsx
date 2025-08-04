@@ -36,6 +36,7 @@ const ListPages = ({ sx, onPageChange }: Props) => {
 
   const langItem = (
     <ListItemStyle
+      key="language-switcher"
       sx={{
         paddingTop: 0,
       }}
